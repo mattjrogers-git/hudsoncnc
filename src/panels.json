@@ -1,0 +1,488 @@
+[
+ {
+  "code": "HV-W01",
+  "name": "Hudson",
+  "series": "Wave",
+  "material": "white",
+  "blurb": "Long, slow horizontal swells that drift like the river on a calm day. Reads beautifully under grazing light in lobbies and long corridors.",
+  "tooling": "1/2\" ball nose, 3D finishing pass",
+  "depth": "up to 3/8\""
+ },
+ {
+  "code": "HV-W02",
+  "name": "Ridgeline",
+  "series": "Wave",
+  "material": "oak",
+  "blurb": "Stepped topographic terraces inspired by the Shawangunk and Catskill ridges. Each contour is a flat pocket, so it machines quickly and crisply.",
+  "tooling": "1/4\" end mill, stepped pockets",
+  "depth": "6 terraces, to 1/2\""
+ },
+ {
+  "code": "HV-W03",
+  "name": "Ripple",
+  "series": "Wave",
+  "material": "white",
+  "blurb": "Concentric rings spreading from an off-center point, like a stone dropped in still water. Great as a single feature wall.",
+  "tooling": "1/2\" ball nose, 3D finishing pass",
+  "depth": "up to 5/16\""
+ },
+ {
+  "code": "HV-W04",
+  "name": "Dune",
+  "series": "Wave",
+  "material": "clay",
+  "blurb": "Asymmetric diagonal ridges with a soft windward slope and a sharper lee edge, like wind-shaped sand.",
+  "tooling": "1/2\" ball nose, 3D finishing pass",
+  "depth": "up to 3/8\""
+ },
+ {
+  "code": "HV-W05",
+  "name": "Tide",
+  "series": "Wave",
+  "material": "white",
+  "blurb": "Two wave fields crossing at a shallow angle, creating a soft interference pattern like overlapping wakes.",
+  "tooling": "1/2\" ball nose, 3D finishing pass",
+  "depth": "up to 5/16\""
+ },
+ {
+  "code": "HV-F01",
+  "name": "Colonnade",
+  "series": "Fluted & Ribbed",
+  "material": "white",
+  "blurb": "Classic concave vertical flutes on a 1-1/2\" spacing. Timeless on reception desks, columns, bar fronts and feature walls.",
+  "tooling": "1\" core-box / ball nose",
+  "depth": "5/16\""
+ },
+ {
+  "code": "HV-F02",
+  "name": "Reed",
+  "series": "Fluted & Ribbed",
+  "material": "walnut",
+  "blurb": "Fine convex reeding on a 3/4\" pitch. Adds rich texture to cabinet-style fronts, doors, island panels and headboards.",
+  "tooling": "3/4\" round-over / bullnose profile pass",
+  "depth": "3/16\""
+ },
+ {
+  "code": "HV-F03",
+  "name": "Fade",
+  "series": "Fluted & Ribbed",
+  "material": "white",
+  "blurb": "Flutes that grow from nothing at the top to full depth at the bottom, a subtle gradient that makes a wall feel taller.",
+  "tooling": "3/4\" ball nose, ramped depth",
+  "depth": "0 to 3/8\""
+ },
+ {
+  "code": "HV-F04",
+  "name": "Undulate",
+  "series": "Fluted & Ribbed",
+  "material": "sage",
+  "blurb": "Vertical flutes whose depth swells and relaxes in a slow wave across the panel. Flutes and waves in one.",
+  "tooling": "3/4\" ball nose, variable depth",
+  "depth": "1/16\" to 3/8\""
+ },
+ {
+  "code": "HV-F05",
+  "name": "Stopped Flute",
+  "series": "Fluted & Ribbed",
+  "material": "white",
+  "blurb": "Traditional stopped fluting with rounded ends, as on classical pilasters. Perfect for columns, door casings and mantels.",
+  "tooling": "3/4\" ball nose, plunge-and-ramp",
+  "depth": "1/4\""
+ },
+ {
+  "code": "HV-C01",
+  "name": "Shiplap",
+  "series": "Classic Carved",
+  "material": "white",
+  "blurb": "Clean horizontal V-grooves that give the look of shiplap or nickel-gap boards in a single flat, stable panel.",
+  "tooling": "90\u00b0 V-bit, straight passes",
+  "depth": "1/8\""
+ },
+ {
+  "code": "HV-C02",
+  "name": "Board & Batten",
+  "series": "Classic Carved",
+  "material": "sage",
+  "blurb": "Raised battens over flat boards, carved from one sheet so there are no seams to open up. Farmhouse to modern.",
+  "tooling": "1/2\" end mill pocket + round-over",
+  "depth": "1/4\""
+ },
+ {
+  "code": "HV-C03",
+  "name": "Brick",
+  "series": "Classic Carved",
+  "material": "clay",
+  "blurb": "Running-bond brick with rounded, slightly irregular faces. Lightweight faux brick for accent walls and fireplaces.",
+  "tooling": "1/4\" ball nose + V-bit mortar lines",
+  "depth": "3/16\""
+ },
+ {
+  "code": "HV-C04",
+  "name": "Wainscot",
+  "series": "Classic Carved",
+  "material": "white",
+  "blurb": "Raised-panel wainscot with beveled fields, carved from one sheet for paneled dining rooms, stair walls and cabinetry ends.",
+  "tooling": "15\u00b0 panel-raising bit or 3D bevel pass",
+  "depth": "3/8\""
+ },
+ {
+  "code": "HV-C05",
+  "name": "Coffer Grid",
+  "series": "Classic Carved",
+  "material": "black",
+  "blurb": "A crisp grid of square-bottom grooves. Simple, architectural, and easy to align across full walls or ceilings.",
+  "tooling": "1/4\" end mill, straight passes",
+  "depth": "1/4\""
+ },
+ {
+  "code": "HV-T01",
+  "name": "Adze",
+  "series": "Gouged & Textured",
+  "material": "walnut",
+  "blurb": "Staggered scoop marks like a hand-hewn beam, cut with a ball-nose tool for a hand-tooled look at production speed.",
+  "tooling": "1\" ball nose, scoop toolpaths",
+  "depth": "3/16\""
+ },
+ {
+  "code": "HV-T02",
+  "name": "Chisel",
+  "series": "Gouged & Textured",
+  "material": "oak",
+  "blurb": "Random-length vertical gouge strokes with tapered ends. Organic, warm and different on every panel.",
+  "tooling": "1/2\" ball nose, ramped strokes",
+  "depth": "3/16\""
+ },
+ {
+  "code": "HV-T03",
+  "name": "Birch Bark",
+  "series": "Gouged & Textured",
+  "material": "white",
+  "blurb": "An irregular vertical texture with the stretched, layered feel of bark. Hides fingerprints and wear in busy spaces.",
+  "tooling": "1/4\" ball nose, 3D raster",
+  "depth": "1/8\""
+ },
+ {
+  "code": "HV-T04",
+  "name": "Hammered",
+  "series": "Gouged & Textured",
+  "material": "black",
+  "blurb": "Overlapping shallow dimples on a hex grid, like hand-hammered metal, cut in wood or MDF. Stunning in matte black.",
+  "tooling": "3/4\" ball nose, plunge pattern",
+  "depth": "1/8\""
+ },
+ {
+  "code": "HV-G01",
+  "name": "Pyramid",
+  "series": "Dimensional",
+  "material": "white",
+  "blurb": "A grid of crisp four-sided pyramids cut with a V-bit. Bold shadows that change all day as the light moves.",
+  "tooling": "90\u00b0 V-bit, V-carve",
+  "depth": "3/8\""
+ },
+ {
+  "code": "HV-G02",
+  "name": "Facet",
+  "series": "Dimensional",
+  "material": "sage",
+  "blurb": "Elongated diamond facets, like a cut gemstone stretched tall. Sharp, architectural and easy to scale up or down.",
+  "tooling": "120\u00b0 V-bit, V-carve",
+  "depth": "5/16\""
+ },
+ {
+  "code": "HV-G03",
+  "name": "Hex Dome",
+  "series": "Dimensional",
+  "material": "oak",
+  "blurb": "Softly domed hexagon tiles with a crisp V-groove between each one. Warm and tactile, like a honeycomb.",
+  "tooling": "1/2\" ball nose + 90\u00b0 V-bit",
+  "depth": "1/4\""
+ },
+ {
+  "code": "HV-G04",
+  "name": "Chevron",
+  "series": "Dimensional",
+  "material": "walnut",
+  "blurb": "Nested V-groove chevrons that point the eye upward. A strong graphic statement for bars, restaurants and retail.",
+  "tooling": "90\u00b0 V-bit, V-carve",
+  "depth": "1/4\""
+ },
+ {
+  "code": "HV-G05",
+  "name": "Basket Weave",
+  "series": "Dimensional",
+  "material": "birch",
+  "blurb": "Alternating squares of horizontal and vertical ribs, like a woven basket. Great for headboards and accent walls.",
+  "tooling": "1/2\" ball nose, parallel passes",
+  "depth": "3/16\""
+ },
+ {
+  "code": "HV-G06",
+  "name": "Scale",
+  "series": "Dimensional",
+  "material": "clay",
+  "blurb": "Overlapping scalloped scales, each gently sloped, like shingles or a fish's skin. Beautiful on curved or column surfaces.",
+  "tooling": "1/2\" ball nose, 3D finishing pass",
+  "depth": "1/4\""
+ },
+ {
+  "code": "HV-G07",
+  "name": "Sunburst",
+  "series": "Dimensional",
+  "material": "white",
+  "blurb": "Rays fanning out from a low center point, cut entirely with a V-bit. Mid-century energy for entries and headboards.",
+  "tooling": "60\u00b0 V-bit, V-carve",
+  "depth": "3/16\""
+ },
+ {
+  "code": "HV-G08",
+  "name": "Herringbone",
+  "series": "Dimensional",
+  "material": "oak",
+  "blurb": "The classic herringbone floor pattern, V-grooved into a single panel. Looks like dozens of pieces, installs like one.",
+  "tooling": "90\u00b0 V-bit, V-carve",
+  "depth": "1/8\""
+ },
+ {
+  "code": "HV-G09",
+  "name": "Waffle",
+  "series": "Dimensional",
+  "material": "oak",
+  "blurb": "Soft pillowed squares separated by rounded channels, like a waffle or tufted upholstery. Warm and tactile.",
+  "tooling": "1/2\" ball nose, grid passes",
+  "depth": "1/4\""
+ },
+ {
+  "code": "HV-P01",
+  "name": "Fin Wall",
+  "series": "Parametric",
+  "material": "birch",
+  "blurb": "Parallel plywood fins whose outer edge follows a flowing curve. Built from stacked, CNC-profiled sheets, with no two fins alike.",
+  "tooling": "Profile-cut plywood fins, assembled on a backer",
+  "depth": "fins 1\" to 4\" deep"
+ },
+ {
+  "code": "HV-P02",
+  "name": "Pixel",
+  "series": "Parametric",
+  "material": "white",
+  "blurb": "A field of square blocks stepped to five depths, driven by a smooth gradient, like a digital landscape. Flat pockets only, so it's fast to cut.",
+  "tooling": "1/4\" end mill, stepped pockets",
+  "depth": "5 steps to 1/2\""
+ },
+ {
+  "code": "HV-P03",
+  "name": "Contour Stack",
+  "series": "Parametric",
+  "material": "birch",
+  "blurb": "Stacked plywood layers, each profiled to a slice of a 3D form, so the exposed ply edges draw natural contour lines.",
+  "tooling": "Profile-cut plywood layers, laminated",
+  "depth": "custom: 1\" to 6\"+"
+ },
+ {
+  "code": "HV-X01",
+  "name": "Flex Kerf",
+  "series": "Flexible Panels",
+  "material": "birch",
+  "blurb": "Staggered through-slits (a \"living hinge\") let a flat sheet of plywood bend smoothly around columns, curved walls and reception desks.",
+  "tooling": "1/8\" end mill, through slits",
+  "depth": "1/4\" to 1/2\" plywood"
+ },
+ {
+  "code": "HV-X02",
+  "name": "Tambour",
+  "series": "Flexible Panels",
+  "material": "walnut",
+  "blurb": "Solid slats cut almost through, leaving a thin flexible skin (or mounted on fabric), so the panel wraps curves like a roll-top desk.",
+  "tooling": "Kerf-cut slats or slats on fabric backer",
+  "depth": "3/4\" slats"
+ },
+ {
+  "code": "HV-X03",
+  "name": "Flex Lattice",
+  "series": "Flexible Panels",
+  "material": "black",
+  "blurb": "A zig-zag lattice screen cut from thin stock that flexes into curves. Popular for curved partitions, pendant shades and ceilings.",
+  "tooling": "1/8\" end mill, through cut",
+  "depth": "1/4\" to 1/2\" panel"
+ },
+ {
+  "code": "HV-X04",
+  "name": "Flex Wave",
+  "series": "Flexible Panels",
+  "material": "white",
+  "blurb": "Wavy S-shaped kerf slits that bend in two directions, ideal for curved bar fronts, columns and backlit features.",
+  "tooling": "1/8\" end mill, through slits",
+  "depth": "1/4\" to 1/2\" panel"
+ },
+ {
+  "code": "HV-A01",
+  "name": "Linear Slot",
+  "series": "Slotted & Acoustic",
+  "material": "oak",
+  "blurb": "Through-cut vertical slots backed with black acoustic felt. Absorbs sound while giving a clean, linear look.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "3/4\" thick panel"
+ },
+ {
+  "code": "HV-A02",
+  "name": "Morse",
+  "series": "Slotted & Acoustic",
+  "material": "white",
+  "blurb": "Slots of varying lengths set in rhythmic columns, like code, cut through and backed with felt for sound control.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "3/4\" thick panel"
+ },
+ {
+  "code": "HV-A03",
+  "name": "Perf Grid",
+  "series": "Slotted & Acoustic",
+  "material": "walnut",
+  "blurb": "A precise grid of drilled holes with an acoustic backer. Quiet, minimal and highly effective in offices and restaurants.",
+  "tooling": "3/8\" drill / spiral bit, drilled pattern",
+  "depth": "3/4\" thick panel"
+ },
+ {
+  "code": "HV-A04",
+  "name": "Slat Acoustic",
+  "series": "Slotted & Acoustic",
+  "material": "oak",
+  "blurb": "The classic acoustic slat wall: wood slats on black acoustic felt. Warm, modern and very effective at taming echo.",
+  "tooling": "Ripped / CNC-cut slats on PET felt backer",
+  "depth": "3/4\" slats on 3/8\" felt"
+ },
+ {
+  "code": "HV-A05",
+  "name": "Groove & Perf",
+  "series": "Slotted & Acoustic",
+  "material": "white",
+  "blurb": "Fine horizontal grooves with hidden holes behind, the look of commercial acoustic panels used in auditoriums and boardrooms.",
+  "tooling": "1/8\" end mill grooves + drilled back holes",
+  "depth": "3/4\" panel"
+ },
+ {
+  "code": "HV-A06",
+  "name": "Skyline Diffuser",
+  "series": "Slotted & Acoustic",
+  "material": "walnut",
+  "blurb": "A 2D sound diffuser: a grid of blocks at varying depths that scatters sound evenly. A favorite in studios, theaters and listening rooms.",
+  "tooling": "1/2\" end mill, stepped pockets",
+  "depth": "up to 2\" (thick stock or laminated)"
+ },
+ {
+  "code": "HV-A07",
+  "name": "Wave Slat",
+  "series": "Slotted & Acoustic",
+  "material": "birch",
+  "blurb": "Acoustic slats whose faces are carved to a flowing wave, so the whole wall moves while still absorbing sound.",
+  "tooling": "Slats 3D-carved on the face, on felt backer",
+  "depth": "3/4\" to 1-1/2\" slats"
+ },
+ {
+  "code": "HV-S01",
+  "name": "Quatrefoil",
+  "series": "Decorative Screens",
+  "material": "white",
+  "blurb": "A classic interlocking four-lobed pattern cut through. Works as room dividers, radiator covers and window screens.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "1/2\" to 3/4\" panel"
+ },
+ {
+  "code": "HV-S02",
+  "name": "Cellular",
+  "series": "Decorative Screens",
+  "material": "black",
+  "blurb": "Organic Voronoi cells with rounded openings, like leaf veins or dried earth. Striking backlit or against a light wall.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "1/2\" to 3/4\" panel"
+ },
+ {
+  "code": "HV-S03",
+  "name": "Honeycomb",
+  "series": "Decorative Screens",
+  "material": "oak",
+  "blurb": "Clean hexagonal openings with an even web. Strong, lightweight and easy to scale for ceilings and partitions.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "1/2\" to 3/4\" panel"
+ },
+ {
+  "code": "HV-S04",
+  "name": "Halftone",
+  "series": "Decorative Screens",
+  "material": "white",
+  "blurb": "Circles that grow and shrink across the panel to create a gradient, like a printed photo. Can be customized to any image or logo.",
+  "tooling": "Drilled + 1/4\" bit circle pockets, through cut",
+  "depth": "1/2\" to 3/4\" panel"
+ },
+ {
+  "code": "HV-S05",
+  "name": "Kasbah",
+  "series": "Decorative Screens",
+  "material": "sage",
+  "blurb": "Eight-point stars and crosses inspired by traditional geometric tile. Rich in pattern yet simple to cut.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "1/2\" to 3/4\" panel"
+ },
+ {
+  "code": "HV-S06",
+  "name": "Birch Stand",
+  "series": "Decorative Screens",
+  "material": "birch",
+  "blurb": "Vertical slats of random widths, like a stand of young trees. A soft, natural divider that still lets light through.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "3/4\" panel"
+ },
+ {
+  "code": "HV-S07",
+  "name": "Greek Key",
+  "series": "Decorative Screens",
+  "material": "white",
+  "blurb": "The timeless meander border, repeated as an all-over screen. Classic, orderly and endlessly adaptable.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "1/2\" to 3/4\" panel"
+ },
+ {
+  "code": "HV-S08",
+  "name": "Petal",
+  "series": "Decorative Screens",
+  "material": "sage",
+  "blurb": "Pointed ogee (petal) openings in a staggered repeat. Elegant for room dividers, cabinet inserts and backlit walls.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "1/2\" to 3/4\" panel"
+ },
+ {
+  "code": "HV-S09",
+  "name": "Prism",
+  "series": "Decorative Screens",
+  "material": "black",
+  "blurb": "Triangular openings in a clean geometric grid. Modern, graphic and strong, great for facades and fences in HDPE or aluminum.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "1/2\" to 3/4\" panel"
+ },
+ {
+  "code": "HV-S10",
+  "name": "Canopy",
+  "series": "Decorative Screens",
+  "material": "oak",
+  "blurb": "Scattered leaf-shaped openings that cast dappled light like a tree canopy. Beautiful as a screen, gate insert or ceiling feature.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "1/2\" to 3/4\" panel"
+ },
+ {
+  "code": "HV-S11",
+  "name": "Ice Ray",
+  "series": "Decorative Screens",
+  "material": "white",
+  "blurb": "A traditional Chinese \"cracked ice\" lattice of irregular straight-sided openings. Every section is unique.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "1/2\" to 3/4\" panel"
+ },
+ {
+  "code": "HV-S12",
+  "name": "Rings",
+  "series": "Decorative Screens",
+  "material": "birch",
+  "blurb": "Overlapping circles form a flowing chain-link pattern of petals and rings. Soft geometry that suits homes and hospitality.",
+  "tooling": "1/4\" compression bit, through cut",
+  "depth": "1/2\" to 3/4\" panel"
+ }
+]
