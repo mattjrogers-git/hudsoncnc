@@ -18,13 +18,28 @@ NAV = [('index.html', 'Home'), ('services.html', 'Services'), ('panels.html', 'P
        ('projects.html', 'Projects'), ('about.html', 'About')]
 
 
+def schema():
+    import json as _j
+    d = {"@context": "https://schema.org", "@type": "LocalBusiness", "@id": C.SITE_URL + "/#business",
+         "name": "Hudson Valley CNC", "url": C.SITE_URL + "/", "telephone": "+1-845-384-2994", "email": C.EMAIL,
+         "image": C.SITE_URL + "/img/machine-full.jpg", "logo": C.SITE_URL + "/img/favicon.svg",
+         "description": "CNC routing, carving and fabrication shop: signs, carved and acoustic wall panels, architectural details, contractor panel cutting, art fabrication and production runs on a 5x10 automatic tool-change router.",
+         "address": {"@type": "PostalAddress", "streetAddress": "30 Crispell Lane", "addressLocality": "New Paltz", "addressRegion": "NY", "postalCode": "12561", "addressCountry": "US"},
+         "areaServed": ["New Paltz", "Gardiner", "Kingston", "Poughkeepsie", "Newburgh", "Highland", "Rosendale", "Ulster County", "Dutchess County", "Orange County", "Hudson Valley", "New York City"],
+         "knowsAbout": ["CNC routing", "CNC carving", "sign making", "wall panels", "acoustic panels", "architectural millwork", "plywood cutting", "HDPE signs", "3D relief carving"],
+         "parentOrganization": {"@type": "Organization", "name": "Clean Air Yurts and Woodworks LLC"}}
+    return '<script type="application/ld+json">' + _j.dumps(d) + '</script>'
+
+
 def head(page, title, desc):
     return f'''<title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
 <meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:image" content="{C.SITE_URL}/img/machine-full.jpg"><meta property="og:type" content="website">
 <link rel="canonical" href="{C.SITE_URL}/{'' if page == 'index.html' else page}">
+<meta property="og:url" content="{C.SITE_URL}/{'' if page == 'index.html' else page}"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+{schema() if page == 'index.html' else ''}
 {FONTS}
 <link rel="stylesheet" href="assets/style.css">'''
 

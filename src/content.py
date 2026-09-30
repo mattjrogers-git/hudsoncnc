@@ -90,7 +90,7 @@ def home():
 <section><div class="wrap split">
   <div class="media">{img("panel-dados", "Plywood panels with routed dados on the router bed")}</div>
   <div class="copy"><span class="eyebrow">Serving the Hudson Valley</span><h2>Local shop, industrial capacity</h2>
-  <p>We&#8217;re on Crispell Lane, between New Paltz and Gardiner, under the Shawangunk Ridge. Homeowners, contractors, architects, sign shops, artists, towns and manufacturers from Kingston to Newburgh and down to New York City send us work.</p>
+  <p>We&#8217;re on Crispell Lane, between New Paltz and Gardiner, under the Shawangunk Ridge. Homeowners, contractors, architects, sign shops, artists, towns and manufacturers send us work from New Paltz, Gardiner, Highland, Rosendale, Kingston, Poughkeepsie, Newburgh and across Ulster, Dutchess and Orange counties, and down to New York City.</p>
   <ul class="ticks"><li>Pressure rollers flatten warped construction plywood for accurate cuts</li><li>Vacuum hold-down for fast, clean sheet processing</li><li>Hundreds of tools in stock, including PCD diamond tooling</li></ul>
   {cta_row()}</div>
 </div></section>'''
