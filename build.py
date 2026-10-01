@@ -13,8 +13,8 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800'
          '&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&display=swap">')
 
-NAV = [('index.html', 'Home'), ('services.html', 'Services'), ('panels.html', 'Panels & Products'),
-       ('contractors.html', 'For Contractors'), ('artists.html', 'For Artists'),
+NAV = [('index.html', 'Home'), ('services.html', 'Services'), ('panels.html', 'Panels'),
+       ('contractors.html', 'Contractors'), ('brands.html', 'Brands'), ('artists.html', 'Artists'),
        ('projects.html', 'Projects'), ('about.html', 'About')]
 
 
@@ -64,7 +64,7 @@ def footer():
   <div class="cols">
     <div><h4>Hudson Valley CNC</h4><p>Industrial CNC routing, carving and fabrication on a 5&#8242; &times; 10&#8242; automatic tool-change router. Serving the Hudson Valley, the Catskills and the NYC region.</p></div>
     <div><h4>Visit / Call</h4><ul><li>{C.ADDRESS}</li><li><a href="tel:{C.PHONE_TEL}">{C.PHONE}</a></li>{f'<li><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></li>' if C.EMAIL else ''}<li>By appointment</li></ul></div>
-    <div><h4>Explore</h4><ul><li><a href="services.html">Services</a></li><li><a href="panels.html">Panel catalog</a></li><li><a href="projects.html">Projects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Request a quote</a></li></ul></div>
+    <div><h4>Explore</h4><ul><li><a href="services.html">Services</a></li><li><a href="brands.html">Displays &amp; demos for brands</a></li><li><a href="panels.html">Panel catalog</a></li><li><a href="projects.html">Projects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Request a quote</a></li></ul></div>
   </div>
   <div class="fine">&copy; Hudson Valley CNC, a dba of Clean Air Yurts and Woodworks LLC &middot; New Paltz, New York</div>
 </div></footer>

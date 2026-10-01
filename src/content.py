@@ -66,6 +66,13 @@ def home():
   <div class="grid g4">{tiles}</div>
 </div></section>
 
+<section class="tight" style="background:var(--panel)"><div class="wrap split">
+  <div class="media">{img('production-kits', 'Production run of product demo kits')}</div>
+  <div class="copy"><span class="eyebrow">For product brands</span><h2>Displays, demos &amp; trade-show pieces</h2>
+  <p>In-store displays, hands-on sales demo kits, sales-meeting demos and product-testing pieces for manufacturers, including DAP Products Inc.</p>
+  <p><a href="brands.html"><b>See work for brands &rarr;</b></a></p></div>
+</div></section>
+
 <section class="dark"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">How a job runs</span><h2>Drawing to finished part</h2></div>
   <ol class="steps">
@@ -112,7 +119,7 @@ def services():
          ['Carved, fluted, slotted and acoustic wall panels', 'Decorative screens and room dividers', 'Store fixtures, slat walls and displays', 'Millwork parts, furniture and casework components (we cut the parts; we don&#8217;t build full cabinets)']),
         ('prod', 'crates-on-table', 'Plywood crate parts nested on the router', 'Products &amp; production runs',
          'Repeatable parts for makers and manufacturers. We nest parts tightly to save material and keep programs on file for reorders.',
-         ['Product parts and flat-pack kits', 'Prototypes and short runs', 'Batch and repeat production', 'Jigs, fixtures and templates']),
+         ['Point-of-purchase displays and sales demo kits (<a href="brands.html">for brands</a>)', 'Product parts and flat-pack kits', 'Prototypes, trade-show pieces and short runs', 'Batch and repeat production', 'Jigs, fixtures and templates']),
         ('signs', 'trail-signs', 'Carved wood trail signs', 'Signs, trails &amp; community',
          'Carved and routed signs in wood, HDU and two-color HDPE, from single trail markers to full storefront systems.',
          ['Trail markers and park signs', 'Business and storefront signs', 'Dimensional letters and logos', 'Plaques, donor walls and memorials']),
@@ -250,8 +257,9 @@ def artists():
 PROJECTS = [
     ('community signs', 'Gardiner Library Commemorative Brick Project', 'A live-edge display cut from locally sawn pine, carved and machined to re-mount the library\u2019s original brass donor plaques.', ['library-plaque', 'library-plaque-detail']),
     ('signs', 'Variable Movement storefront sign', 'Multi-panel sign carved from King ColorCore two-color HDPE, with a raised, layered logo panel. Weatherproof and never needs painting.', ['colorcore-sign', 'colorcore-sign-detail']),
-    ('signs community', 'Trail and business signs', 'Carved signs for Full Circle Gardiner: The Living Room, Hudson Valley Trailworks, Trailunity and Trailside Lounge.', ['trail-signs']),
-    ('signs', 'DAP Weldwood 100 Years', 'Layered dimensional anniversary sign with raised lettering and a framed walnut-look background.', ['weldwood-sign-2', 'weldwood-sign']),
+    ('signs community', 'Signs for Full Circle Gardiner', 'Carved and painted signs for The Living Room, Trailside Lounge, Hudson Valley Trailworks and Trailunity at Full Circle in Gardiner.', ['living-room-sign', 'living-room-sign-interior', 'fc-trail-signs-wall', 'trail-signs']),
+    ('community art', 'Full Circle community loom', 'A large community loom at The Living Room, with CNC-cut plywood ratchet mechanisms and a pegged hardwood beam, where visitors weave a shared tapestry.', ['loom-tapestry', 'loom-ratchet', 'loom-gearbox', 'loom-beam-pegs']),
+    ('signs production', 'DAP Weldwood 100 Years', 'Layered dimensional anniversary display for DAP Products Inc., with raised lettering and a framed walnut-look background.', ['weldwood-sign-2', 'weldwood-sign']),
     ('production', 'Plywood crate production run', 'A production run of branded plywood crates: parts nested on full sheets, cut, then assembled.', ['crates-stacked', 'crates-on-table', 'crate-white', 'crate-detail', 'crate-orange']),
     ('contractors', 'Curved forms for a round house', 'CNC-cut curved plywood forms for a concrete walkway around a round home.', ['curved-forms', 'curved-forms-2']),
     ('art carving', '3D relief carving', 'Large relief panels carved from a 3D model in white HDPE.', ['relief-carving-2', 'relief-carving', 'relief-carving-3']),
@@ -262,9 +270,9 @@ PROJECTS = [
     ('art', 'Engraved photo portrait', 'A photograph engraved into a black panel.', ['portrait-engraving']),
     ('art production', 'Giant plywood dinosaur kits', 'Slot-together dinosaur skeletons cut from plywood sheets.', ['dino-assembled', 'dino-parts']),
     ('art', 'Carved PVC prop shield', 'A cosplay prop carved in PVC with raised relief, then hand-painted.', ['prop-shield']),
-    ('production wood', 'Walnut coasters', 'A batch of engraved walnut coasters, nested on one blank.', ['walnut-coasters']),
-    ('production', 'Nested parts in production', 'Small parts nested tightly on full sheets for a production order.', ['plaques-production', 'plaques-sheet', 'plaques-routing']),
-    ('art production', 'Instrument template', 'A guitar-body template cut from sheet stock.', ['instrument-template']),
+    ('production wood', 'Embroidery hoop picture frames', 'Walnut frames with routed hoop recesses for displaying finished embroidery, nested and cut as a batch from one panel.', ['walnut-coasters']),
+    ('production', 'Point-of-purchase displays for DAP', 'Product displays and test pieces for DAP Products Inc., nested tightly on full sheets and cut in production quantities.', ['plaques-production', 'plaques-sheet', 'plaques-routing', 'production-kits']),
+    ('production', 'Cycling trainer rocker plate', 'A rocker plate for an indoor bike trainer, profiled and drilled from sheet stock so the bike can sway naturally while riding.', ['instrument-template']),
     ('signs', 'Engraved plywood sign', 'V-carved lettering in Baltic birch.', ['reload-sign']),
 ]
 CATS = [('all', 'All'), ('signs', 'Signs'), ('community', 'Community'), ('contractors', 'Contractors'), ('production', 'Production'),
@@ -291,6 +299,49 @@ def projects():
 
 
 
+# ---------------------------------------------------------------- FOR BRANDS (displays, demos, trade show)
+def brands():
+    items = [('Point-of-purchase displays', 'Counter and shelf displays that put your product in front of shoppers, cut and finished in retail-ready quantities.'),
+             ('Hands-on sales demo kits', 'Boxed sample kits your sales team can carry to customers, so buyers can see and touch the product.'),
+             ('Sales meeting &amp; training demos', 'Demonstration pieces for national sales meetings, product launches and training sessions.'),
+             ('Trade-show displays', 'Branded display pieces, signage and demo stations for booths and events.'),
+             ('Product testing pieces', 'Repeatable sample boards and test pieces cut to the same spec every time, for R&amp;D and quality testing.'),
+             ('Brand &amp; anniversary signage', 'Dimensional signs and milestone displays, like the Weldwood 100 Years piece we made for DAP.')]
+    cards = ''.join(f'<div class="tile"><h3>{t}</h3><p>{d}</p></div>' for t, d in items)
+    gal = [('weldwood-sign-2', 'DAP Weldwood 100 Years dimensional display'), ('production-kits', 'Production run of demo kits for DAP'),
+           ('dap-kit-boxed', 'Boxed hands-on demo kit'), ('plaques-production', 'Display parts nested on a full sheet'),
+           ('plaques-sheet', 'Production sheet of display components'), ('dap-kit-samples', 'Sample pieces for a demo kit')]
+    g = ''.join(f'<figure class="proj">{img(n, a)}<figcaption><p>{a}</p></figcaption></figure>' for n, a in gal)
+    return f"""
+<section class="hero dark" style="padding-bottom:clamp(40px,6vw,72px)"><div class="wrap hero-grid">
+  <div class="hero-copy"><span class="eyebrow">For product brands &amp; manufacturers</span><h1>Displays, demos &amp; trade-show pieces</h1>
+  <p class="lede">We make in-store displays, hands-on sales demo kits, sales-meeting demos, trade-show pieces and product-testing items for manufacturers, in runs from a handful to hundreds.</p>{cta_row()}</div>
+  <figure class="hero-img">{img('production-kits', 'Production run of product demo kits')}<figcaption>Demo kits in production for DAP Products Inc.</figcaption></figure>
+</div></section>
+<section><div class="wrap split">
+  <div class="copy"><span class="eyebrow">Proven with a national brand</span><h2>Trusted by DAP Products Inc.</h2>
+  <p>DAP, the maker of caulks, sealants, adhesives and patching products found in every hardware store, has used Hudson Valley CNC for in-store point-of-purchase displays, hands-on demos for its sales team, national sales meeting demos, trade-show displays and product-testing items.</p>
+  <p>We can do the same for your company. Send us the product, the message and the deadline, and we&#8217;ll prototype, refine and produce the pieces, then pack them to ship wherever they need to go.</p></div>
+  <div class="media">{img('weldwood-sign-2', 'DAP Weldwood 100 Years display')}</div>
+</div></section>
+<section style="background:var(--panel)"><div class="wrap"><div class="sec-head"><span class="eyebrow">What we make for brands</span><h2>Built for marketing, sales &amp; R&amp;D teams</h2></div><div class="grid g3">{cards}</div></div></section>
+<section><div class="wrap"><div class="sec-head"><span class="eyebrow">From our shop</span><h2>Recent production work</h2></div><div class="grid g3">{g}</div></div></section>
+<section class="dark"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">How it works</span><h2>Brief to delivery</h2></div>
+  <ol class="steps"><li><b>Brief</b><span>Your product, message, quantity and deadline. NDA? Happy to sign one.</span></li>
+  <li><b>Prototype</b><span>We cut a sample so you can see it and handle it before committing.</span></li>
+  <li><b>Production</b><span>Nested, cut and finished consistently, with programs kept on file for reorders.</span></li>
+  <li><b>Pack &amp; ship</b><span>Packed for retail, sales reps or the show floor, and shipped anywhere in the U.S.</span></li></ol>
+</div></section>
+<section><div class="wrap split">
+  <div class="copy"><h2>Why brands use a small shop</h2><ul class="ticks">
+  <li>Fast turnaround for launch and meeting dates</li><li>One point of contact from prototype to production</li>
+  <li>Wood, plywood, acrylic, PVC, HDPE, ACM and more under one roof</li><li>Consistent parts across every run and reorder</li><li>Short runs without big-shop minimums</li></ul>
+  {cta_row()}</div>
+  <div class="media">{img('plaques-routing', 'Display parts being routed on our CNC')}</div>
+</div></section>"""
+
+
 # ---------------------------------------------------------------- CASE STUDY PAGES
 CASES = {
  'full-circle-gardiner-signs.html': dict(
@@ -300,15 +351,31 @@ CASES = {
    seo_title='Carved Signs for Full Circle Gardiner & The Living Room | Hudson Valley CNC',
    seo_desc='Hudson Valley CNC made the carved signs for Full Circle Gardiner, The Living Room, Hudson Valley Trailworks, Trailunity and Trailside Lounge at 297 Bruynswick Rd, Gardiner, NY.',
    lede='Carved signs for Full Circle, the community hub at 297 Bruynswick Road in Gardiner: The Living Room, Hudson Valley Trailworks, Trailunity and Trailside Lounge.',
-   hero='trail-signs',
+   hero='living-room-sign',
    body="""<p>Full Circle is a community gathering place in Gardiner, home to The Living Room music and events space, Gardiner Bakehouse, Benton Beer Garden, Daisy&#8217;s Ice Cream and the trails and natural playgrounds of Hudson Valley Trailworks. It&#8217;s run with a simple idea: help neighbors become neighbors again.</p>
-<p>We made the signs that tie the place together: the sign for The Living Room, plus the signs for Hudson Valley Trailworks, Trailunity and Trailside Lounge. Each one is carved on our CNC router, so the lettering and logos come out crisp and every sign in the set matches.</p>
+<p>We made the signs that tie the place together. <strong>The Living Room</strong> has two: a rectangular sign at the entrance and a large oval sign over the stage, each with a carved sunburst and painted lettering in the venue&#8217;s colors. At the trail entrance, a matching set marks <strong>Trailside Lounge</strong>, <strong>Hudson Valley Trailworks</strong> and <strong>Trailunity</strong>.</p>
+<p>Every sign started as a drawing on screen, was carved on our CNC router so the lettering and logos come out crisp, then was hand-painted and finished. We also built the <a href="full-circle-community-loom.html">community loom</a> that hangs in The Living Room, and a topographic bench of ours will be installed at Full Circle this fall.</p>
 <p>Signs like these are a good example of what a small CNC shop can do for a local business: take an existing logo, turn it into a carved, dimensional sign, and make matching pieces for every space on a property so it reads as one place.</p>""",
    facts=[('Client', 'Full Circle Gardiner (Full Circle Commons)'), ('Location', '297 Bruynswick Rd, Gardiner, NY 12525'),
-          ('Signs', 'The Living Room, Hudson Valley Trailworks, Trailunity, Trailside Lounge'), ('Process', 'CNC-carved lettering and logos')],
-   gallery=['trail-signs'],
+          ('Signs', 'The Living Room (entrance and stage), Trailside Lounge, Hudson Valley Trailworks, Trailunity'), ('Process', 'Designed, CNC-carved, hand-painted'), ('Also at Full Circle', 'Community loom; topographic bench (coming this fall)')],
+   gallery=['living-room-sign-entry', 'living-room-sign-interior', 'living-room-sign-hall', 'fc-trail-signs-wall', 'fc-entrance', 'trail-signs', 'living-room-sign-design', 'living-room-sign-cnc', 'fc-building'],
    links=[('Visit Full Circle Gardiner', 'https://www.fcgardiner.com/'), ('The Living Room events', 'https://www.fcgardiner.com/the-living-room'), ('Full Circle on Instagram', 'https://www.instagram.com/fullcirclegardiner/')],
-   note='More photos of the installed signs coming soon.'),
+   note=''),
+ 'full-circle-community-loom.html': dict(
+   project='Full Circle community loom',
+   title='Community loom at Full Circle',
+   eyebrow='Project &middot; Community &middot; Gardiner, NY',
+   seo_title='Community Loom at Full Circle Gardiner | Hudson Valley CNC',
+   seo_desc='A large wall-hung community loom built by Hudson Valley CNC for The Living Room at Full Circle in Gardiner, NY, with CNC-cut plywood ratchet mechanisms and a pegged hardwood beam.',
+   lede='A large wall-hung loom in The Living Room at Full Circle, where anyone who visits can add a few rows to a shared tapestry.',
+   hero='loom-tapestry',
+   body="""<p>Full Circle wanted a loom big enough for a whole community to weave on together. We built it to hang in The Living Room, Full Circle&#8217;s music and gathering space in Gardiner.</p>
+<p>The working parts were cut on our CNC router: <strong>plywood side plates and ratchet gear mechanisms</strong> that tension and advance the warp, and a <strong>hardwood beam drilled with a long row of pegs</strong> to space the warp threads evenly. The finished tapestry grows a little with every visitor.</p>
+<p>It&#8217;s a good example of what we like building: something useful and good-looking that brings people together, designed and made right here in the Hudson Valley.</p>""",
+   facts=[('Client', 'Full Circle Gardiner'), ('Where', 'The Living Room, 297 Bruynswick Rd, Gardiner, NY'), ('Work', 'CNC-cut plywood ratchet and gear mechanisms, side plates, pegged hardwood beam'), ('Related', 'Signs for The Living Room and the trail entrance')],
+   gallery=['loom-weaving', 'loom-ratchet', 'loom-gearbox', 'loom-beam-pegs', 'loom-side-plate', 'mahogany-strip'],
+   links=[('Signs we made for Full Circle', 'full-circle-gardiner-signs.html'), ('Visit The Living Room', 'https://www.fcgardiner.com/the-living-room')],
+   note=''),
  'gardiner-library-brick-project.html': dict(
    project='Gardiner Library Commemorative Brick Project',
    title='Gardiner Library Commemorative Brick Project',
@@ -332,7 +399,7 @@ def case_page(slug):
     c = CASES[slug]
     facts = ''.join(f'<tr><th>{k}</th><td>{v}</td></tr>' for k, v in c['facts'])
     gal = ''.join(f'<figure class="proj">{img(g, c["title"])}</figure>' for g in c['gallery'])
-    links = ''.join(f'<a class="btn ghost" href="{u}" rel="noopener" target="_blank">{t}</a>' for t, u in c['links'])
+    links = ''.join(f'<a class="btn ghost" href="{u}"' + (' rel="noopener" target="_blank"' if u.startswith('http') else '') + f'>{t}</a>' for t, u in c['links'])
     note = f'<p class="notice">{c["note"]}</p>' if c['note'] else ''
     return f"""
 <header class="page-head"><div class="wrap"><span class="eyebrow">{c['eyebrow']}</span><h1>{c['title']}</h1><p class="lede">{c['lede']}</p></div></header>
@@ -341,7 +408,7 @@ def case_page(slug):
   {f'<div class="hero-actions">{links}</div>' if links else ''}{note}</div>
   <div class="media"><figure class="hero-img">{img(c['hero'], c['title'])}</figure></div>
 </div></section>
-{f'<section class="tight" style="background:var(--panel)"><div class="wrap"><div class="grid g2">{gal}</div></div></section>' if len(c['gallery']) > 1 else ''}
+{f'<section class="tight" style="background:var(--panel)"><div class="wrap"><div class="grid {"g3" if len(c["gallery"]) > 2 else "g2"}">{gal}</div></div></section>' if len(c['gallery']) > 1 else ''}
 <section class="tight"><div class="wrap"><p><a href="projects.html"><b>&larr; All projects</b></a></p>
 <div style="margin-top:20px">{cta_row()}</div></div></section>"""
 
@@ -440,6 +507,7 @@ PAGES = {
     'index.html': ('Hudson Valley CNC | CNC Routing & Fabrication in New Paltz, NY', 'Industrial CNC routing, carving and fabrication in the Hudson Valley: signs, wall panels, architectural details, art fabrication and production runs on a 5x10 ATC router.', home),
     'services.html': ('Services | Hudson Valley CNC', 'CNC routing, drilling, 3D carving, slab flattening, signs, architectural panels and production runs in New Paltz, NY.', services),
     'panels.html': ('Panel Collection | Hudson Valley CNC', 'Carved, fluted, flexible and acoustic wall panels and decorative screens, cut to order in the Hudson Valley.', panels),
+    'brands.html': ('Point-of-Purchase Displays, Sales Demo Kits & Trade Show Displays | Hudson Valley CNC', 'CNC-made point-of-purchase displays, hands-on sales demo kits, sales meeting demos, trade show displays and product testing items for manufacturers. Trusted by DAP Products Inc.', brands),
     'contractors.html': ('For Contractors | Hudson Valley CNC', 'CNC panel cutting and drilling, carved trim, curved forms and exterior details for contractors and builders.', contractors),
     'artists.html': ('For Artists | Hudson Valley CNC', 'CNC fabrication for artists: relief carving, molds, terrain models, props, stipple art, lithophanes and editions.', artists),
     'projects.html': ('Projects | Hudson Valley CNC', 'Signs, panels, furniture, art and production runs made at Hudson Valley CNC in New Paltz, NY.', projects),
