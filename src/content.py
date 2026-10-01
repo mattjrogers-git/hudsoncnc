@@ -248,9 +248,9 @@ def artists():
 
 # ---------------------------------------------------------------- PROJECTS
 PROJECTS = [
-    ('community signs', 'Gardiner Library Commemorative Brick Project', 'A live-edge wall display for the Gardiner Library with carved, gilded lettering and a grid of engraved donor plaques. It hangs at the library entrance.', ['library-plaque', 'library-plaque-detail']),
+    ('community signs', 'Gardiner Library Commemorative Brick Project', 'A live-edge display cut from locally sawn pine, carved and machined to re-mount the library\u2019s original brass donor plaques.', ['library-plaque', 'library-plaque-detail']),
     ('signs', 'Variable Movement storefront sign', 'Multi-panel sign carved from King ColorCore two-color HDPE, with a raised, layered logo panel. Weatherproof and never needs painting.', ['colorcore-sign', 'colorcore-sign-detail']),
-    ('signs community', 'Trail and business signs', 'Carved wood signs for Hudson Valley Trailworks, Trailunity and Trailside Lounge.', ['trail-signs']),
+    ('signs community', 'Trail and business signs', 'Carved signs for Full Circle Gardiner: The Living Room, Hudson Valley Trailworks, Trailunity and Trailside Lounge.', ['trail-signs']),
     ('signs', 'DAP Weldwood 100 Years', 'Layered dimensional anniversary sign with raised lettering and a framed walnut-look background.', ['weldwood-sign-2', 'weldwood-sign']),
     ('production', 'Plywood crate production run', 'A production run of branded plywood crates: parts nested on full sheets, cut, then assembled.', ['crates-stacked', 'crates-on-table', 'crate-white', 'crate-detail', 'crate-orange']),
     ('contractors', 'Curved forms for a round house', 'CNC-cut curved plywood forms for a concrete walkway around a round home.', ['curved-forms', 'curved-forms-2']),
@@ -278,13 +278,72 @@ def projects():
         th = ''
         if len(ims) > 1:
             th = '<div class="thumbs">' + ''.join(f'<img src="img/{i}-sm.jpg" data-sm="img/{i}-sm.jpg" data-full="img/{i}.jpg" alt="{E(t)}" loading="lazy">' for i in ims) + '</div>'
-        cards += f'<article class="proj" data-cat="{cat}">{img(ims[0], t, cls="main")}{th}<span class="tag">{cat.split()[0]}</span><h3>{E(t)}</h3><p>{E(d)}</p></article>'
+        link = next((s for s, v in CASES.items() if v['project'] == t), None)
+        h = f'<a href="{link}">{E(t)}</a>' if link else E(t)
+        more = f'<a href="{link}"><b>Read the project story &rarr;</b></a>' if link else ''
+        cards += f'<article class="proj" data-cat="{cat}">{img(ims[0], t, cls="main")}{th}<span class="tag">{cat.split()[0]}</span><h3>{h}</h3><p>{E(d)}</p>{more}</article>'
     return f'''
 <header class="page-head"><div class="wrap"><span class="eyebrow">Projects</span><h1>Recent work</h1>
 <p class="lede">Real jobs from the shop, from one-off signs to production runs. Tap a photo to enlarge it.</p></div></header>
 <section class="tight"><div class="wrap">
 <div class="filters" data-filter-group="#proj-grid" role="group" aria-label="Filter projects">{chips}</div>
 <div class="grid g3" id="proj-grid">{cards}</div></div></section>'''
+
+
+
+# ---------------------------------------------------------------- CASE STUDY PAGES
+CASES = {
+ 'full-circle-gardiner-signs.html': dict(
+   project='Trail and business signs',
+   title='Signs for Full Circle Gardiner',
+   eyebrow='Project &middot; Signs &middot; Gardiner, NY',
+   seo_title='Carved Signs for Full Circle Gardiner & The Living Room | Hudson Valley CNC',
+   seo_desc='Hudson Valley CNC made the carved signs for Full Circle Gardiner, The Living Room, Hudson Valley Trailworks, Trailunity and Trailside Lounge at 297 Bruynswick Rd, Gardiner, NY.',
+   lede='Carved signs for Full Circle, the community hub at 297 Bruynswick Road in Gardiner: The Living Room, Hudson Valley Trailworks, Trailunity and Trailside Lounge.',
+   hero='trail-signs',
+   body="""<p>Full Circle is a community gathering place in Gardiner, home to The Living Room music and events space, Gardiner Bakehouse, Benton Beer Garden, Daisy&#8217;s Ice Cream and the trails and natural playgrounds of Hudson Valley Trailworks. It&#8217;s run with a simple idea: help neighbors become neighbors again.</p>
+<p>We made the signs that tie the place together: the sign for The Living Room, plus the signs for Hudson Valley Trailworks, Trailunity and Trailside Lounge. Each one is carved on our CNC router, so the lettering and logos come out crisp and every sign in the set matches.</p>
+<p>Signs like these are a good example of what a small CNC shop can do for a local business: take an existing logo, turn it into a carved, dimensional sign, and make matching pieces for every space on a property so it reads as one place.</p>""",
+   facts=[('Client', 'Full Circle Gardiner (Full Circle Commons)'), ('Location', '297 Bruynswick Rd, Gardiner, NY 12525'),
+          ('Signs', 'The Living Room, Hudson Valley Trailworks, Trailunity, Trailside Lounge'), ('Process', 'CNC-carved lettering and logos')],
+   gallery=['trail-signs'],
+   links=[('Visit Full Circle Gardiner', 'https://www.fcgardiner.com/'), ('The Living Room events', 'https://www.fcgardiner.com/the-living-room'), ('Full Circle on Instagram', 'https://www.instagram.com/fullcirclegardiner/')],
+   note='More photos of the installed signs coming soon.'),
+ 'gardiner-library-brick-project.html': dict(
+   project='Gardiner Library Commemorative Brick Project',
+   title='Gardiner Library Commemorative Brick Project',
+   eyebrow='Project &middot; Community &middot; Gardiner, NY',
+   seo_title='Gardiner Library Commemorative Brick Wall | Live-Edge Pine Donor Display | Hudson Valley CNC',
+   seo_desc='A live-edge pine donor wall for the Gardiner Library, cut from local timber and CNC-machined to re-mount the original engraved brass commemorative brick plaques.',
+   lede='A new home for the library&#8217;s commemorative brick plaques: a live-edge display cut from locally sawn pine and laid out to re-mount every original brass plaque.',
+   hero='library-plaque',
+   body="""<p>The Gardiner Library&#8217;s Commemorative Brick Project honors hundreds of donors, families and local businesses, each with an engraved brass plaque. The plaques needed a new, permanent home where people could read them again.</p>
+<p>We built the display from <strong>locally cut live-edge pine</strong>, keeping the natural edge of the slab as the border. On the CNC router we carved the &#8220;Gardiner Library &middot; Commemorative Brick Project&#8221; title and laid out a precise grid so each <strong>original brass plaque re-mounts</strong> in an even, readable layout. The lettering is finished in gold to match the brass.</p>
+<p>It now hangs at the library entrance, carved with &#8220;Made in Gardiner by Hudson Valley CNC&#8221; in the corner.</p>""",
+   facts=[('Client', 'Gardiner Library'), ('Material', 'Locally cut live-edge pine'), ('Work', 'CNC-carved, gilded lettering; layout designed to re-mount the original brass plaques'),
+          ('Where to see it', 'Gardiner Library entrance, Gardiner, NY')],
+   gallery=['library-plaque', 'library-plaque-detail'],
+   links=[],
+   note=''),
+}
+
+
+def case_page(slug):
+    c = CASES[slug]
+    facts = ''.join(f'<tr><th>{k}</th><td>{v}</td></tr>' for k, v in c['facts'])
+    gal = ''.join(f'<figure class="proj">{img(g, c["title"])}</figure>' for g in c['gallery'])
+    links = ''.join(f'<a class="btn ghost" href="{u}" rel="noopener" target="_blank">{t}</a>' for t, u in c['links'])
+    note = f'<p class="notice">{c["note"]}</p>' if c['note'] else ''
+    return f"""
+<header class="page-head"><div class="wrap"><span class="eyebrow">{c['eyebrow']}</span><h1>{c['title']}</h1><p class="lede">{c['lede']}</p></div></header>
+<section class="tight"><div class="wrap split" style="align-items:start">
+  <div class="copy">{c['body']}<div class="table-wrap"><table class="spec-table"><tbody>{facts}</tbody></table></div>
+  {f'<div class="hero-actions">{links}</div>' if links else ''}{note}</div>
+  <div class="media"><figure class="hero-img">{img(c['hero'], c['title'])}</figure></div>
+</div></section>
+{f'<section class="tight" style="background:var(--panel)"><div class="wrap"><div class="grid g2">{gal}</div></div></section>' if len(c['gallery']) > 1 else ''}
+<section class="tight"><div class="wrap"><p><a href="projects.html"><b>&larr; All projects</b></a></p>
+<div style="margin-top:20px">{cta_row()}</div></div></section>"""
 
 
 # ---------------------------------------------------------------- ABOUT
@@ -388,3 +447,6 @@ PAGES = {
     'faq.html': ('FAQ | Hudson Valley CNC', 'Answers about files, materials, sizes, turnaround and quotes.', faq),
     'contact.html': ('Request a Quote | Hudson Valley CNC', 'Request a CNC fabrication quote from Hudson Valley CNC. Call 845-384-2994.', contact),
 }
+
+for _slug, _c in CASES.items():
+    PAGES[_slug] = (_c['seo_title'], _c['seo_desc'], (lambda s=_slug: case_page(s)))
