@@ -258,7 +258,7 @@ PROJECTS = [
     ('community signs', 'Gardiner Library Commemorative Brick Project', 'A live-edge display cut from locally sawn pine, carved and machined to re-mount the library\u2019s original brass donor plaques.', ['library-plaque', 'library-plaque-detail']),
     ('signs', 'Variable Movement storefront sign', 'Multi-panel sign carved from King ColorCore two-color HDPE, with a raised, layered logo panel. Weatherproof and never needs painting.', ['colorcore-sign', 'colorcore-sign-detail']),
     ('signs community', 'Signs for Full Circle Gardiner', 'Carved and painted signs for The Living Room, Trailside Lounge, Hudson Valley Trailworks and Trailunity at Full Circle in Gardiner.', ['living-room-sign', 'living-room-sign-interior', 'fc-trail-signs-wall', 'trail-signs']),
-    ('community art', 'Full Circle community loom', 'A large community loom at The Living Room, with CNC-cut plywood ratchet mechanisms and a pegged hardwood beam, where visitors weave a shared tapestry.', ['loom-tapestry', 'loom-ratchet', 'loom-gearbox', 'loom-beam-pegs']),
+    ('community art', 'Full Circle community loom', 'A 22-foot community loom at The Living Room, featured in Chronogram, with CNC-cut plywood ratchet mechanisms and a pegged hardwood beam.', ['loom-tapestry', 'loom-ratchet', 'loom-gearbox', 'loom-beam-pegs']),
     ('signs production', 'DAP Weldwood 100 Years', 'Layered dimensional anniversary display for DAP Products Inc., with raised lettering and a framed walnut-look background.', ['weldwood-sign-2', 'weldwood-sign']),
     ('production', 'Plywood crate production run', 'A production run of branded plywood crates: parts nested on full sheets, cut, then assembled.', ['crates-stacked', 'crates-on-table', 'crate-white', 'crate-detail', 'crate-orange']),
     ('contractors', 'Curved forms for a round house', 'CNC-cut curved plywood forms for a concrete walkway around a round home.', ['curved-forms', 'curved-forms-2']),
@@ -354,7 +354,7 @@ CASES = {
    hero='living-room-sign',
    body="""<p>Full Circle is a community gathering place in Gardiner, home to The Living Room music and events space, Gardiner Bakehouse, Benton Beer Garden, Daisy&#8217;s Ice Cream and the trails and natural playgrounds of Hudson Valley Trailworks. It&#8217;s run with a simple idea: help neighbors become neighbors again.</p>
 <p>We made the signs that tie the place together. <strong>The Living Room</strong> has two: a rectangular sign at the entrance and a large oval sign over the stage, each with a carved sunburst and painted lettering in the venue&#8217;s colors. At the trail entrance, a matching set marks <strong>Trailside Lounge</strong>, <strong>Hudson Valley Trailworks</strong> and <strong>Trailunity</strong>.</p>
-<p>Every sign started as a drawing on screen, was carved on our CNC router so the lettering and logos come out crisp, then was hand-painted and finished. We also built the <a href="full-circle-community-loom.html">community loom</a> that hangs in The Living Room, and a topographic bench of ours will be installed at Full Circle this fall.</p>
+<p>Every sign started as a drawing on screen, was carved on our CNC router so the lettering and logos come out crisp, then was hand-painted and finished. We also built the 22-foot <a href="full-circle-community-loom.html">community loom</a> in The Living Room (featured in <a href="https://www.chronogram.com/hv-towns/gardiner/full-circle-gardiner-community-hub/" target="_blank" rel="noopener">Chronogram</a>), and a topographic bench of ours will be installed at Full Circle this fall.</p>
 <p>Signs like these are a good example of what a small CNC shop can do for a local business: take an existing logo, turn it into a carved, dimensional sign, and make matching pieces for every space on a property so it reads as one place.</p>""",
    facts=[('Client', 'Full Circle Gardiner (Full Circle Commons)'), ('Location', '297 Bruynswick Rd, Gardiner, NY 12525'),
           ('Signs', 'The Living Room (entrance and stage), Trailside Lounge, Hudson Valley Trailworks, Trailunity'), ('Process', 'Designed, CNC-carved, hand-painted'), ('Also at Full Circle', 'Community loom; topographic bench (coming this fall)')],
@@ -366,15 +366,17 @@ CASES = {
    title='Community loom at Full Circle',
    eyebrow='Project &middot; Community &middot; Gardiner, NY',
    seo_title='Community Loom at Full Circle Gardiner | Hudson Valley CNC',
-   seo_desc='A large wall-hung community loom built by Hudson Valley CNC for The Living Room at Full Circle in Gardiner, NY, with CNC-cut plywood ratchet mechanisms and a pegged hardwood beam.',
-   lede='A large wall-hung loom in The Living Room at Full Circle, where anyone who visits can add a few rows to a shared tapestry.',
+   seo_desc='The 22-foot community loom at The Living Room, Full Circle Gardiner, built by Matt Rogers of Hudson Valley CNC with Mike Benevento, as featured in Chronogram.',
+   lede='A 22-foot community loom in The Living Room at Full Circle, where anyone who visits can add a few rows to a shared tapestry.',
    hero='loom-tapestry',
-   body="""<p>Full Circle wanted a loom big enough for a whole community to weave on together. We built it to hang in The Living Room, Full Circle&#8217;s music and gathering space in Gardiner.</p>
+   body="""<p>Full Circle wanted a loom big enough for a whole community to weave on together. Matt Rogers of Hudson Valley CNC built the <strong>22-foot loom</strong> with Full Circle co-founder Mike Benevento, and artist Paula Kucera and local fashion teachers helped lead the weaving. It hangs in The Living Room, Full Circle&#8217;s music and gathering space in Gardiner.</p>
 <p>The working parts were cut on our CNC router: <strong>plywood side plates and ratchet gear mechanisms</strong> that tension and advance the warp, and a <strong>hardwood beam drilled with a long row of pegs</strong> to space the warp threads evenly. The finished tapestry grows a little with every visitor.</p>
-<p>It&#8217;s a good example of what we like building: something useful and good-looking that brings people together, designed and made right here in the Hudson Valley.</p>""",
-   facts=[('Client', 'Full Circle Gardiner'), ('Where', 'The Living Room, 297 Bruynswick Rd, Gardiner, NY'), ('Work', 'CNC-cut plywood ratchet and gear mechanisms, side plates, pegged hardwood beam'), ('Related', 'Signs for The Living Room and the trail entrance')],
+<p>It&#8217;s a good example of what we like building: something useful and good-looking that brings people together, designed and made right here in the Hudson Valley.</p>
+<blockquote class="notice"><p>&#8220;The campus has also hosted makers&#8217; markets, food-pantry fundraising, art workshops, and a 22-foot community loom built by Mike and local woodworker Matt Rogers, with artist Paula Kucera and local fashion teachers helping to lead the project.&#8221;</p>
+<p class="eyebrow" style="margin-top:8px">Chronogram, &#8220;Full Circle Gardiner Builds Community by Design,&#8221; Brian K. Mahoney, August 21, 2026</p></blockquote>""",
+   facts=[('Size', '22 feet'), ('Built by', 'Matt Rogers (Hudson Valley CNC) and Mike Benevento'), ('Weaving led by', 'Artist Paula Kucera and local fashion teachers'), ('Client', 'Full Circle Gardiner'), ('Where', 'The Living Room, 297 Bruynswick Rd, Gardiner, NY'), ('Work', 'CNC-cut plywood ratchet and gear mechanisms, side plates, pegged hardwood beam'), ('Related', 'Signs for The Living Room and the trail entrance')],
    gallery=['loom-weaving', 'loom-ratchet', 'loom-gearbox', 'loom-beam-pegs', 'loom-side-plate', 'mahogany-strip'],
-   links=[('Signs we made for Full Circle', 'full-circle-gardiner-signs.html'), ('Visit The Living Room', 'https://www.fcgardiner.com/the-living-room')],
+   links=[('Read the Chronogram article', 'https://www.chronogram.com/hv-towns/gardiner/full-circle-gardiner-community-hub/'), ('Signs we made for Full Circle', 'full-circle-gardiner-signs.html'), ('Visit The Living Room', 'https://www.fcgardiner.com/the-living-room')],
    note=''),
  'gardiner-library-brick-project.html': dict(
    project='Gardiner Library Commemorative Brick Project',
