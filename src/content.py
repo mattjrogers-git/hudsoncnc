@@ -84,7 +84,7 @@ def home():
 </div></section>
 
 <section><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">Recent work</span><h2>Made in the Hudson Valley</h2></div>
+  <div class="sec-head"><span class="eyebrow">Recent work</span><h2>Made in the Hudson Valley</h2><p class="lede">A small sampling of our completed projects.</p></div>
   <div class="grid g3">{feats}</div>
   <p style="margin-top:28px"><a href="projects.html"><b>See all projects &rarr;</b></a></p>
 </div></section>
@@ -292,7 +292,7 @@ def projects():
         cards += f'<article class="proj" data-cat="{cat}">{img(ims[0], t, cls="main")}{th}<span class="tag">{cat.split()[0]}</span><h3>{h}</h3><p>{E(d)}</p>{more}</article>'
     return f'''
 <header class="page-head"><div class="wrap"><span class="eyebrow">Projects</span><h1>Recent work</h1>
-<p class="lede">Real jobs from the shop, from one-off signs to production runs. Tap a photo to enlarge it.</p></div></header>
+<p class="lede">Real jobs from the shop, from one-off signs to production runs. This is only a small sampling of the projects we&#8217;ve completed. Ask us about work like yours. Tap a photo to enlarge it.</p></div></header>
 <section class="tight"><div class="wrap">
 <div class="filters" data-filter-group="#proj-grid" role="group" aria-label="Filter projects">{chips}</div>
 <div class="grid g3" id="proj-grid">{cards}</div></div></section>'''
