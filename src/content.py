@@ -345,7 +345,7 @@ def brands():
 # ---------------------------------------------------------------- CASE STUDY PAGES
 CASES = {
  'full-circle-gardiner-signs.html': dict(
-   project='Trail and business signs',
+   project='Signs for Full Circle Gardiner',
    title='Signs for Full Circle Gardiner',
    eyebrow='Project &middot; Signs &middot; Gardiner, NY',
    seo_title='Carved Signs for Full Circle Gardiner & The Living Room | Hudson Valley CNC',
