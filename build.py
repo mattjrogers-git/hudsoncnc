@@ -22,7 +22,7 @@ def schema():
     import json as _j
     d = {"@context": "https://schema.org", "@type": "LocalBusiness", "@id": C.SITE_URL + "/#business",
          "name": "Hudson Valley CNC", "url": C.SITE_URL + "/", "telephone": "+1-845-384-2994", "email": C.EMAIL,
-         "image": C.SITE_URL + "/img/machine-full.jpg", "logo": C.SITE_URL + "/img/favicon.svg",
+         "image": C.SITE_URL + "/img/machine-full.jpg", "logo": C.SITE_URL + "/img/logo/logo-ridgeline.png",
          "description": "CNC routing, carving and fabrication shop: signs, carved and acoustic wall panels, architectural details, contractor panel cutting, art fabrication and production runs on a 5x10 automatic tool-change router.",
          "address": {"@type": "PostalAddress", "streetAddress": "30 Crispell Lane", "addressLocality": "New Paltz", "addressRegion": "NY", "postalCode": "12561", "addressCountry": "US"},
          "areaServed": ["New Paltz", "Gardiner", "Kingston", "Poughkeepsie", "Newburgh", "Highland", "Rosendale", "Ulster County", "Dutchess County", "Orange County", "Hudson Valley", "New York City"],
@@ -38,10 +38,13 @@ def head(page, title, desc):
 <meta property="og:image" content="{C.SITE_URL}/img/machine-full.jpg"><meta property="og:type" content="website">
 <link rel="canonical" href="{C.SITE_URL}/{'' if page == 'index.html' else page}">
 <meta property="og:url" content="{C.SITE_URL}/{'' if page == 'index.html' else page}"><meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml"><link rel="icon" href="img/logo/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="img/logo/favicon-180.png">
 {schema() if page == 'index.html' else ''}
 {FONTS}
 <link rel="stylesheet" href="assets/style.css">'''
+
+
+BRAND_MARK = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'brand-mark.svgfrag')).read()
 
 
 def header(page):
@@ -49,7 +52,7 @@ def header(page):
     links = ''.join(f'<a href="{h}"{cur if h == page else ""}>{t}</a>' for h, t in NAV)
     return f'''<a class="skip" href="#main">Skip to content</a>
 <header class="site-head"><div class="wrap">
-  <a class="brand" href="index.html"><b>Hudson Valley CNC</b><span>New Paltz, NY</span></a>
+  <a class="brand" href="index.html">{BRAND_MARK}<b>Hudson Valley CNC</b><span>New Paltz, NY</span></a>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   <nav class="nav" id="nav" aria-label="Main">{links}<a class="btn" href="contact.html">Request a Quote</a></nav>
 </div></header>'''
@@ -62,7 +65,7 @@ def footer():
 </div></section>
 <footer class="site-foot"><div class="wrap">
   <div class="cols">
-    <div><h4>Hudson Valley CNC</h4><p>Industrial CNC routing, carving and fabrication on a 5&#8242; &times; 10&#8242; automatic tool-change router. Serving the Hudson Valley, the Catskills and the NYC region.</p></div>
+    <div><img class="foot-badge" src="img/logo/badge.svg" alt="Hudson Valley CNC badge" width="120" height="120"><h4>Hudson Valley CNC</h4><p>Industrial CNC routing, carving and fabrication on a 5&#8242; &times; 10&#8242; automatic tool-change router. Serving the Hudson Valley, the Catskills and the NYC region.</p></div>
     <div><h4>Visit / Call</h4><ul><li>{C.ADDRESS}</li><li><a href="tel:{C.PHONE_TEL}">{C.PHONE}</a></li>{f'<li><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></li>' if C.EMAIL else ''}<li>By appointment</li></ul></div>
     <div><h4>Explore</h4><ul><li><a href="services.html">Services</a></li><li><a href="brands.html">Displays &amp; demos for brands</a></li><li><a href="panels.html">Panel catalog</a></li><li><a href="projects.html">Projects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Request a quote</a></li></ul></div>
   </div>

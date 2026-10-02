@@ -102,7 +102,7 @@ mono = font('IBMPlexMono-Medium.ttf')
 inst = lambda wt: font('InstrumentSans[wdth,wght].ttf', wght=wt, wdth=100)
 
 # ---------- A: Ridgeline lockup (stacked)
-def concept_a(ink=INK, accent=BLUE, bg=None):
+def concept_a(ink=INK, accent=BLUE, bg=None, cliff=None, sub_op=0.8):
     W, H = 1000, 560
     d1, w1 = text_path('HUDSON VALLEY CNC', bsd(800), 150, 0, 0, tracking=0.01)
     sc = 860 / w1
@@ -110,12 +110,12 @@ def concept_a(ink=INK, accent=BLUE, bg=None):
     pts = ridge_pts(x0, 300, 860, 150)
     poly = smooth_path(pts) + f' L{x0+860:.2f},300 L{x0:.2f},300 Z'
     body = f'<path d="{poly}" fill="{ink}"/><path d="{tower(pts, x0, 860, 44)}" fill="{ink}"/>'
-    body += cliff_band(pts, x0, 860, 300, TAN if bg else PAPER, sw=4, op=0.9)
+    body += cliff_band(pts, x0, 860, 300, cliff or (TAN if bg else PAPER), sw=4, op=0.9)
     body += f'<rect x="{x0}" y="300" width="860" height="10" fill="{accent}"/>'
     dA, _ = text_path('HUDSON VALLEY CNC', bsd(800), 150 * sc, x0, 300 + 30 + cap_height(bsd(800), 150 * sc), tracking=0.01)
     body += f'<path d="{dA}" fill="{ink}"/>'
     dB, _ = text_path('CNC ROUTING  ·  FABRICATION  ·  NEW PALTZ, NY', mono, 26, W / 2, 520, tracking=0.12, anchor='middle')
-    body += f'<path d="{dB}" fill="{ink}" opacity="0.8"/>'
+    body += f'<path d="{dB}" fill="{ink}" opacity="{sub_op}"/>'
     return svg(W, H, body, bg)
 
 # ---------- B: Toolpath (ridge drawn by an end mill)
