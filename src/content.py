@@ -312,6 +312,30 @@ def brands():
            ('dap-kit-boxed', 'Boxed hands-on demo kit'), ('plaques-production', 'Display parts nested on a full sheet'),
            ('plaques-sheet', 'Production sheet of display components'), ('dap-kit-samples', 'Sample pieces for a demo kit')]
     g = ''.join(f'<figure class="proj">{img(n, a)}<figcaption><p>{a}</p></figcaption></figure>' for n, a in gal)
+    concepts = [('concept-pop-counter', 'Counter display', 'Tiered countertop display in birch plywood with a printed header, sized for a checkout counter or contractor desk.'),
+                ('concept-demo-station', 'Hands-on demo station', 'Demo table with angled test boards in wood, tile and drywall so customers can try the product themselves.'),
+                ('concept-rep-kit', 'Sales-rep demo kit', 'Cased kit with foam insert, CNC-cut sample blocks, product samples and a swatch card.'),
+                ('concept-cutaway-wall', 'Wall-system cutaway', 'Layered wall section (framing, insulation, sheathing, WRB, siding) with callouts for each product.'),
+                ('concept-deck-display', 'Decking sample rack', 'Angled rack for deck-board colors and textures, with label tabs for each finish.'),
+                ('concept-booth', '10x10 trade-show booth', 'Slat back wall, product shelves, a cutaway model and a demo counter, built to pack flat.')]
+    cg = ''.join(f'<figure class="proj">{img(n, t + " concept rendering")}<figcaption><h3>{t}</h3><p>{d}</p></figcaption></figure>' for n, t, d in concepts)
+    inds = [('Sealants &amp; adhesives', 'Bead demos on real substrates, counter displays, test panels'),
+            ('Decking &amp; railing', 'Sample racks, deck cutaways, rep sample kits'),
+            ('Fasteners &amp; connectors', 'Fastening demo boards, pull-test fixtures, counter displays'),
+            ('Siding, trim &amp; roofing', 'Wall and roof cutaways, lap and profile sample boards'),
+            ('Sheathing, insulation &amp; WRB', 'Wall-assembly cutaways and layer-by-layer demo panels'),
+            ('Tools &amp; accessories', 'Cut-test boards, tool walls, demo stations'),
+            ('Paint, stain &amp; finishes', 'Finish sample boards and swatch displays'),
+            ('Windows, doors &amp; hardware', 'Cutaway corners, hardware display boards')]
+    ig = ''.join(f'<div class="tile"><h3>{t}</h3><p>{d}</p></div>' for t, d in inds)
+    bfaq = [('What quantities do you handle?', 'Anything from one prototype to several hundred identical units. We nest parts on full 5x10 sheets, so mid-size runs are efficient, and we keep every program on file so reorders match.'),
+            ('How fast can you turn a project?', 'A simple prototype can often be cut within a week of approved drawings. Production timing depends on quantity and finishing, and we quote rush jobs for show and meeting deadlines.'),
+            ('Can you work from our designs or brand guidelines?', 'Yes. Send CAD, PDFs, a sketch or just the idea. We&#8217;ll draw it up, apply your colors and logos, and send a proof before cutting.'),
+            ('Will you sign an NDA?', 'Yes. Unreleased products and launch materials are kept confidential.'),
+            ('What materials do you use for displays?', 'Birch and maple plywood, hardwoods, PVC, acrylic, HDPE, ACM (aluminum composite), and the actual building materials your product goes on, such as siding, decking, drywall and tile.'),
+            ('Can you ship to multiple locations?', 'Yes. We pack for retail, sales reps or the show floor and ship anywhere in the U.S., including split shipments to reps or stores.'),
+            ('Do you do the printing and graphics?', 'We engrave, paint and apply vinyl in-house, and work with local print partners for large-format graphics, so you get one finished piece from one vendor.')]
+    fq = ''.join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in bfaq)
     return f"""
 <section class="hero dark" style="padding-bottom:clamp(40px,6vw,72px)"><div class="wrap hero-grid">
   <div class="hero-copy"><span class="eyebrow">For product brands &amp; manufacturers</span><h1>Displays, demos &amp; trade-show pieces</h1>
@@ -325,6 +349,9 @@ def brands():
   <div class="media">{img('weldwood-sign-2', 'DAP Weldwood 100 Years display')}</div>
 </div></section>
 <section style="background:var(--panel)"><div class="wrap"><div class="sec-head"><span class="eyebrow">What we make for brands</span><h2>Built for marketing, sales &amp; R&amp;D teams</h2></div><div class="grid g3">{cards}</div></div></section>
+<section><div class="wrap"><div class="sec-head"><span class="eyebrow">Ideas for your next launch</span><h2>Display &amp; demo concepts</h2>
+<p class="lede">Concept renderings of pieces we can build for building-product and tool brands. Shown unbranded; yours would carry your products, colors and logos.</p></div><div class="grid g3">{cg}</div></div></section>
+<section style="background:var(--panel)"><div class="wrap"><div class="sec-head"><span class="eyebrow">Industries</span><h2>Who we build for</h2></div><div class="grid g4">{ig}</div></div></section>
 <section><div class="wrap"><div class="sec-head"><span class="eyebrow">From our shop</span><h2>Recent production work</h2></div><div class="grid g3">{g}</div></div></section>
 <section class="dark"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">How it works</span><h2>Brief to delivery</h2></div>
@@ -339,7 +366,13 @@ def brands():
   <li>Wood, plywood, acrylic, PVC, HDPE, ACM and more under one roof</li><li>Consistent parts across every run and reorder</li><li>Short runs without big-shop minimums</li></ul>
   {cta_row()}</div>
   <div class="media">{img('plaques-routing', 'Display parts being routed on our CNC')}</div>
-</div></section>"""
+</div></section>
+<section class="dark"><div class="wrap split" style="align-items:center">
+  <div class="copy"><span class="eyebrow">Planning for show season?</span><h2>Spring shows are closer than they look</h2>
+  <p>JLC LIVE, IBS/KBIS and spring sales meetings book up fast. Display pieces are usually locked in three to five months out, so fall is the time to prototype. Tell us your show dates and we&#8217;ll plan backward from them.</p>{cta_row()}</div>
+  <div class="media">{img('concept-booth', '10x10 trade-show booth concept')}</div>
+</div></section>
+<section class="tight"><div class="wrap" style="max-width:860px"><div class="sec-head"><span class="eyebrow">Brand FAQ</span><h2>Questions from marketing &amp; sales teams</h2></div>{fq}</div></section>"""
 
 
 # ---------------------------------------------------------------- CASE STUDY PAGES
@@ -509,7 +542,7 @@ PAGES = {
     'index.html': ('Hudson Valley CNC | CNC Routing & Fabrication in New Paltz, NY', 'Industrial CNC routing, carving and fabrication in the Hudson Valley: signs, wall panels, architectural details, art fabrication and production runs on a 5x10 ATC router.', home),
     'services.html': ('Services | Hudson Valley CNC', 'CNC routing, drilling, 3D carving, slab flattening, signs, architectural panels and production runs in New Paltz, NY.', services),
     'panels.html': ('Panel Collection | Hudson Valley CNC', 'Carved, fluted, flexible and acoustic wall panels and decorative screens, cut to order in the Hudson Valley.', panels),
-    'brands.html': ('Point-of-Purchase Displays, Sales Demo Kits & Trade Show Displays | Hudson Valley CNC', 'CNC-made point-of-purchase displays, hands-on sales demo kits, sales meeting demos, trade show displays and product testing items for manufacturers. Trusted by DAP Products Inc.', brands),
+    'brands.html': ('Point-of-Purchase Displays, Sales Demo Kits & Trade Show Displays | Hudson Valley CNC', 'CNC-made point-of-purchase displays, hands-on sales demo kits, sales meeting demos, trade show displays, cutaway wall and deck displays, demo boards and product testing items for building-product and tool brands. Trusted by DAP Products Inc.', brands),
     'contractors.html': ('For Contractors | Hudson Valley CNC', 'CNC panel cutting and drilling, carved trim, curved forms and exterior details for contractors and builders.', contractors),
     'artists.html': ('For Artists | Hudson Valley CNC', 'CNC fabrication for artists: relief carving, molds, terrain models, props, stipple art, lithophanes and editions.', artists),
     'projects.html': ('Projects | Hudson Valley CNC', 'Signs, panels, furniture, art and production runs made at Hudson Valley CNC in New Paltz, NY.', projects),
