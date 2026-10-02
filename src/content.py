@@ -272,7 +272,7 @@ PROJECTS = [
     ('art production', 'Giant plywood dinosaur kits', 'Slot-together dinosaur skeletons cut from plywood sheets.', ['dino-assembled', 'dino-parts']),
     ('art', 'Carved PVC prop shield', 'A cosplay prop carved in PVC with raised relief, then hand-painted.', ['prop-shield']),
     ('production wood', 'Embroidery hoop picture frames', 'Walnut frames with routed hoop recesses for displaying finished embroidery, nested and cut as a batch from one panel.', ['walnut-coasters']),
-    ('displays production', 'Point-of-purchase displays for DAP', 'Retail displays, sales demos and test pieces for DAP Products Inc. since 2020, nested on full sheets and cut in production quantities.', ['dap-ultra-clear-roof', 'dap-spray-texture-displays', 'dap-cnc-frames', 'dap-retail-samples', 'plaques-production', 'production-kits']),
+    ('displays production', 'Point-of-purchase displays for DAP', 'Retail displays, sales demos and test pieces for DAP Products Inc. since 2020, nested on full sheets and cut in production quantities.', ['dap-ultra-clear-roof', 'dap-spray-texture-displays', 'dap-cnc-frames', 'dap-mccoys-displays', 'dap-wood-filler', 'dap-fiber-cement-cnc']),
     ('production', 'Cycling trainer rocker plate', 'A rocker plate for an indoor bike trainer, profiled and drilled from sheet stock so the bike can sway naturally while riding.', ['instrument-template']),
     ('signs', 'Engraved plywood sign', 'V-carved lettering in Baltic birch.', ['reload-sign']),
 ]
@@ -311,7 +311,7 @@ def brands():
     cards = ''.join(f'<div class="tile"><h3>{t}</h3><p>{d}</p></div>' for t, d in items)
     gal = [('dap-weldwood-jlc', 'Our Weldwood 100 Years sign in DAP&#8217;s booth at JLC LIVE'), ('dap-ultra-clear-roof', 'Sealant demo board on real brick and asphalt'),
            ('dap-spray-texture-displays', 'Spray texture store displays ready to ship'), ('dap-cnc-frames', 'Demo-board frames nested on the CNC router'),
-           ('dap-retail-samples', 'Hanging retail product displays'), ('dap-nsm-demos', 'Sales meeting demo pieces in production')]
+           ('dap-mccoys-displays', 'Hanging retail product displays, boxed for stores'), ('dap-nsm-demos', 'Sales meeting demo pieces in production')]
     g = ''.join(f'<figure class="proj">{img(n, a)}<figcaption><p>{a}</p></figcaption></figure>' for n, a in gal)
     concepts = [('concept-pop-counter', 'Counter display', 'Tiered countertop display in birch plywood with a printed header, sized for a checkout counter or contractor desk.'),
                 ('concept-demo-station', 'Hands-on demo station', 'Demo table with angled test boards in wood, tile and drywall so customers can try the product themselves.'),
@@ -470,11 +470,13 @@ CASES = {
    facts=[('Client since', '2020'), ('Projects', '30+ separate programs'), ('Pieces delivered', '10,000+'),
           ('Typical run', '40 to 500 identical pieces; up to 5,000 sample strips'), ('Uses', 'Retail displays, sales-rep demos, national sales meetings, trade shows, product testing')],
    gallery=[('dap-ultra-clear-roof', 'Ultra Clear Roof demo board: brick, clear sealant and asphalt side by side'), ('dap-cnc-frames', 'Demo-board frames nested and cut on our CNC router'),
-            ('dap-spray-texture-displays', 'Spray texture store displays, sealed and ready to ship'), ('dap-retail-samples', 'Hanging product displays for a retail chain'),
-            ('dap-asphalt-crack', 'Asphalt crack filler demo pieces'), ('dap-nsm-demos', 'National sales meeting demo pieces stacked for packing'),
-            ('dap-crack-filler', 'Concrete crack filler demo board'), ('dap-accent-wall', 'Textured accent-wall panel for JLC LIVE'),
-            ('dap-demo-frames', 'Demo-block frames in production'), ('dap-2in1-demo', 'Weldwood 2in1 wood glue and filler demo'),
-            ('dap-cracked-concrete', 'Cracked concrete tiles for crack filler demos'), ('bison-deck-shop', 'Bison sample deck for Home Depot')],
+            ('dap-spray-texture-displays', 'Spray texture store displays, sealed and ready to ship'), ('dap-mccoys-displays', 'Hanging product displays for a retail chain, boxed for stores'),
+            ('dap-fiber-cement-cnc', 'Fiber-cement samples set into CNC-pocketed boards'), ('dap-wood-filler', 'Wood-filler hole boards in stained and unstained wood'),
+            ('dap-jlc-wall', 'Layered accent-wall display for JLC LIVE'), ('dap-wall-texture-trifold', 'Folding wall-texture table displays'),
+            ('dap-orange-peel-strip', 'Orange peel texture board: fine, medium and heavy'), ('dap-asphalt-crack', 'Asphalt crack filler demo pieces'),
+            ('dap-nsm-demos', 'National sales meeting demo pieces stacked for packing'), ('dap-crack-filler', 'Concrete crack filler demo board'),
+            ('dap-mccoys-lineup', 'Retail display pieces laid out before assembly'), ('dap-2in1-demo', 'Weldwood 2in1 wood glue and filler demo'),
+            ('bison-deck-shop', 'Bison sample deck for Home Depot')],
    links=[('Bison sample decks', 'bison-deck-display.html'), ('Displays &amp; demos for your brand', 'brands.html')],
    note='',
    extra="""<section class="tight"><div class="wrap"><div class="sec-head"><span class="eyebrow">Year by year</span><h2>A sampling of the work</h2></div>
