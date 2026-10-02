@@ -60,7 +60,7 @@ p { margin: 0; max-width: 66ch; }
 /* header */
 .site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper); border-bottom: 1px solid var(--rule); }
 .site-head .wrap { display: flex; align-items: center; gap: 20px; min-height: 68px; }
-.brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: var(--ink); margin-right: auto; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); margin-right: auto; }
 .brand b { white-space: nowrap; font: 800 1.55rem/1 var(--f-display); text-transform: uppercase; letter-spacing: .02em; }
 .brand span { white-space: nowrap; font: 500 .72rem/1 var(--f-mono); letter-spacing: .12em; color: var(--ink-2); text-transform: uppercase; }
 .nav { display: flex; gap: 18px; align-items: center; }
@@ -245,3 +245,7 @@ details p { margin-top: 10px; color: var(--ink-2); }
 
 .year-table th { width: 96px; white-space: nowrap; }
 .year-table thead th:last-child { width: auto; }
+
+.brand-mark { width: 66px; height: auto; flex: none; color: var(--ink); margin-right: 2px; }
+.foot-badge { display: block; width: 140px; height: 140px; margin-bottom: 18px; }
+@media (max-width: 600px) { .brand-mark { width: 52px; } }
