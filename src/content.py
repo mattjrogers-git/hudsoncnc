@@ -353,7 +353,7 @@ def brands():
 <section style="background:var(--panel)"><div class="wrap split">
   <div class="media">{img('bison-deck-shop', 'Bison Level.Up sample deck display built for DAP')}</div>
   <div class="copy"><span class="eyebrow">Featured &middot; In Home Depot stores</span><h2>Sample decks for Bison Level.Up</h2>
-  <p>For Bison&#8217;s adjustable deck pedestals, distributed by DAP, we built in-store sample decks with real joists, decking, gravel, pavers and an 8% slope, so shoppers can see the pedestals adjust. The program also included pedestal displays with movable joists and 100 porcelain paver demos.</p>
+  <p>For Bison&#8217;s adjustable deck pedestals, distributed by DAP, we built in-store sample decks with real joists, decking, gravel, pavers and a 1% slope, so shoppers can see the pedestals adjust. The program also included pedestal displays with movable joists and 100 porcelain paver demos.</p>
   <p><a href="bison-deck-display.html"><b>Read the Bison project &rarr;</b></a></p></div>
 </div></section>
 <section style="background:var(--panel)"><div class="wrap"><div class="sec-head"><span class="eyebrow">What we make for brands</span><h2>Built for marketing, sales &amp; R&amp;D teams</h2></div><div class="grid g3">{cards}</div></div></section>
@@ -444,14 +444,14 @@ CASES = {
    lede='In-store sample decks that show shoppers how Bison Level.Up adjustable deck pedestals work: real framing, real decking, real ground conditions, built to survive shipping and the store aisle.',
    hero='bison-deck-shop',
    body="""<p><strong>Bison Level.Up</strong> is an adjustable pedestal system for building a ground-level deck without digging footings. The pedestals sit right on grade, adjust for height and compensate for slope. DAP distributes the system, and it&#8217;s sold at Home Depot. DAP needed a way to show shoppers, in the aisle, how a deck goes together on pedestals instead of posts.</p>
-<p>We built a <strong>40&quot; x 30&quot; sample deck</strong> on a Baltic birch base finished like a real backyard: pea gravel, brick pavers and an artificial-grass border, with an <strong>8% up-slope</strong> across the middle third so the pedestals visibly adjust to uneven ground. The frame is pressure-treated 2x6 joists built to Bison&#8217;s instructions with Simpson angle brackets, topped with gray composite deck boards. Every pedestal is screwed in from underneath so the display holds together through shipping and handling, and each one ships in its own stackable wooden crate.</p>
+<p>We built a <strong>40&quot; x 30&quot; sample deck</strong> on a Baltic birch base finished like a real backyard: pea gravel, brick pavers and an artificial-grass border, with a <strong>1% slope</strong> across the middle third so the pedestals visibly adjust to uneven ground. The frame is pressure-treated 2x6 joists built to Bison&#8217;s instructions with Simpson angle brackets, topped with gray composite deck boards. Every pedestal is screwed in from underneath so the display holds together through shipping and handling, and each one ships in its own stackable wooden crate.</p>
 <p>The program grew from there. We built smaller <strong>three-sided PVC displays</strong> with a single pedestal: some with a fixed joist, others with a movable joist so shoppers can try the adjustment themselves. We also built a deluxe deck on six pedestals over grass and gravel. For the paver side of the line, we made <strong>100 paver pedestal demos</strong>: a pedestal with its paver attachment carrying a 2&nbsp;cm porcelain paver, with a galvanized backer glued underneath, cut to 3&quot; wide and ground smooth.</p>
 <p>It&#8217;s a good example of what we do for brands: take a product that&#8217;s hard to explain on a shelf, and build a piece that shows it working with real materials, in quantity, and ready to ship to stores.</p>""",
    facts=[('Client', 'DAP Products Inc. (distributor of Bison Level.Up)'), ('Where', 'Home Depot stores'),
-          ('Sample deck', '40&quot; x 30&quot; on Baltic birch; gravel, brick pavers and turf; 8% slope; PT 2x6 joists, composite decking; crated'),
+          ('Sample deck', '40&quot; x 30&quot; on Baltic birch; gravel, brick pavers and turf; 1% slope; PT 2x6 joists, composite decking; crated'),
           ('Pedestal displays', 'Three-sided PVC displays with fixed or movable joists, plus a six-pedestal deluxe deck'),
           ('Paver demos', '100 porcelain paver pedestal demos'), ('Timeline', 'Prototyped Dec 2023; displays shipped 2024; paver demos early 2025')],
-   gallery=[('bison-deck-store', 'Sample deck on the shelf in a Home Depot store'), ('bison-deck-level', 'Sample deck with the 8% slope marked on the base'),
+   gallery=[('bison-deck-store', 'Sample deck on the shelf in a Home Depot store'), ('bison-deck-level', 'Sample deck on its sloped base, with level and slope label'),
             ('bison-pedestal-display', 'Three-sided PVC pedestal display with a joist'), ('bison-paver-demo', 'Porcelain paver pedestal demos in production'),
             ('bison-pallets', 'Displays crated and palletized for shipping'), ('bison-deck-shop', 'The sample deck in our shop before crating')],
    links=[('All our DAP work', 'dap-products-displays.html'), ('Displays &amp; demos for brands', 'brands.html')],
