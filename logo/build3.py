@@ -26,6 +26,25 @@ def cliff_face(pts, x0, w, depth, col):
         pass
     return d, cr
 
+LEFT_CLIFFS = [(90, 472, 0.4)]
+
+def cliff_strip(pts, x0, w, X0, X1, depth):
+    """thin cliff band under the crest, tapered at both ends."""
+    a = x0 + X0 / 1000 * w; b = x0 + X1 / 1000 * w
+    top = []; n = 40
+    for i in range(n + 1):
+        x = a + (b - a) * i / n; top.append((x, ridge_y(pts, x) + depth * 0.12))
+    bot = []
+    for x, y in reversed(top):
+        f = (x - a) / (b - a)
+        taper = min(1.0, f / 0.03, (1 - f) / 0.05)
+        jag = 1.0
+        bot.append((x, ridge_y(pts, x) + depth * 0.12 + depth * taper * jag))
+    return 'M' + ' L'.join(f'{p[0]:.2f},{p[1]:.2f}' for p in top + bot) + ' Z'
+
+def left_cliffs(pts, x0, w, depth):
+    return ' '.join(cliff_strip(pts, x0, w, a, b, depth * k) for a, b, k in LEFT_CLIFFS)
+
 def tower_t(pts, x0, w, s):
     # tower sits on crest at TOWER_X
     tx = x0 + B.TOWER_X / 1000 * w; ty = ridge_y(pts, tx) + s * 0.1; tw = s * 0.42
@@ -40,7 +59,7 @@ def concept_a3(ink=INK, accent=BLUE, bg=None, cliff=PAPER, sub_op=0.8, rh=120):
     poly = smooth_path(pts) + f' L{x0+860:.2f},300 L{x0:.2f},300 Z'
     body = f'<path d="{poly}" fill="{ink}"/><path d="{tower_t(pts, x0, 860, 40)}" fill="{ink}"/>'
     cf, cr = cliff_face(pts, x0, 860, rh * 0.42, cliff)
-    body += f'<path d="{cf}" fill="{cliff}"/><path d="{cr}" stroke="{ink}" stroke-width="2.2" stroke-linecap="round" opacity="0.7"/>'
+    body += f'<path d="{cf}" fill="{cliff}"/><path d="{left_cliffs(pts, x0, 860, rh * 0.42)}" fill="{cliff}"/>'
     body += f'<rect x="{x0}" y="300" width="860" height="10" fill="{accent}"/>'
     dA, _ = text_path('HUDSON VALLEY CNC', bsd(800), 150 * sc, x0, 300 + 30 + cap_height(bsd(800), 150 * sc), tracking=0.01)
     body += f'<path d="{dA}" fill="{ink}"/>'
@@ -62,8 +81,8 @@ def concept_c3():
         if i == 0:
             body += f'<path d="{tower_t(pts, x0, rw, 34)}" fill="{col}"/>'
             cf, cr = cliff_face(pts, x0, rw, (120) * 0.42, '#ffffff')
-            top = (cf, cr)
-    body += f'<path d="{top[0]}" fill="#f7f3ea"/><path d="{top[1]}" stroke="#c9a46c" stroke-width="2" stroke-linecap="round"/>'
+            top = (cf, left_cliffs(pts, x0, rw, 120 * 0.42))
+    body += f'<path d="{top[0]}" fill="#f7f3ea"/><path d="{top[1]}" fill="#f7f3ea"/>'
     body += '</g>'
     body += f'<circle cx="{cx}" cy="{cy}" r="{R-78}" fill="none" stroke="{INK}" stroke-width="6"/>'
     top_t = arc_text('HUDSON VALLEY CNC', bsd(800), 62, cx, cy, R - 58, 0, tracking=0.1)
