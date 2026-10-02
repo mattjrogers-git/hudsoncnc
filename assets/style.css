@@ -242,3 +242,5 @@ details p { margin-top: 10px; color: var(--ink-2); }
 .page-head .wrap { display: grid; gap: 16px; }
 .jump { display: flex; flex-wrap: wrap; gap: 8px 16px; font: 500 .85rem var(--f-mono); }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+
+.year-table th { width: 96px; white-space: nowrap; }
