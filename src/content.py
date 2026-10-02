@@ -37,7 +37,7 @@ def home():
     feat = [('library-plaque', 'Gardiner Library commemorative brick wall', 'Gardiner Library Brick Project'),
             ('colorcore-sign', 'Two-color HDPE storefront sign on the router', 'Variable Movement sign'),
             ('bison-deck-shop', 'Bison sample deck display for Home Depot', 'Bison sample decks for DAP'),
-            ('weldwood-sign-2', 'Dimensional 100-year anniversary sign', 'DAP Weldwood 100 Years'),
+            ('dap-weldwood-jlc', 'Weldwood 100 Years sign in DAP&#8217;s JLC LIVE booth', 'DAP Weldwood 100 Years'),
             ('crates-stacked', 'Stacked plywood crates from a production run', 'Plywood crate production run'),
             ('relief-carving-2', 'White 3D relief carving', '3D relief carving')]
     feats = ''.join(f'<figure class="proj">{img(n, a)}<figcaption><h3>{t}</h3></figcaption></figure>' for n, a, t in feat)
@@ -259,7 +259,7 @@ PROJECTS = [
     ('signs', 'Variable Movement storefront sign', 'Multi-panel sign carved from King ColorCore two-color HDPE, with a raised, layered logo panel. Weatherproof and never needs painting.', ['colorcore-sign', 'colorcore-sign-detail']),
     ('signs community', 'Signs for Full Circle Gardiner', 'Carved and painted signs for The Living Room, Trailside Lounge, Hudson Valley Trailworks and Trailunity at Full Circle in Gardiner.', ['living-room-sign', 'living-room-sign-interior', 'fc-trail-signs-wall', 'trail-signs']),
     ('community art', 'Full Circle community loom', 'A 22-foot community loom at The Living Room, featured in Chronogram, with CNC-cut plywood ratchet mechanisms and a pegged hardwood beam.', ['loom-tapestry', 'loom-ratchet', 'loom-gearbox', 'loom-beam-pegs']),
-    ('displays production', 'Bison sample deck displays for DAP', 'In-store sample decks, pedestal displays and paver demos for Bison Level.Up adjustable deck pedestals, built for DAP and placed in Home Depot stores.', ['bison-deck-shop', 'bison-deck-store']),
+    ('displays production', 'Bison sample deck displays for DAP', 'In-store sample decks, pedestal displays and paver demos for Bison Level.Up adjustable deck pedestals, built for DAP and placed in Home Depot stores.', ['bison-deck-shop', 'bison-deck-store', 'bison-pedestal-display', 'bison-paver-demo']),
     ('displays signs', 'DAP Weldwood 100 Years', 'Layered dimensional anniversary display for DAP Products Inc., with raised lettering and a framed walnut-look background.', ['weldwood-sign-2', 'weldwood-sign']),
     ('production', 'Plywood crate production run', 'A production run of branded plywood crates: parts nested on full sheets, cut, then assembled.', ['crates-stacked', 'crates-on-table', 'crate-white', 'crate-detail', 'crate-orange']),
     ('contractors', 'Curved forms for a round house', 'CNC-cut curved plywood forms for a concrete walkway around a round home.', ['curved-forms', 'curved-forms-2']),
@@ -272,7 +272,7 @@ PROJECTS = [
     ('art production', 'Giant plywood dinosaur kits', 'Slot-together dinosaur skeletons cut from plywood sheets.', ['dino-assembled', 'dino-parts']),
     ('art', 'Carved PVC prop shield', 'A cosplay prop carved in PVC with raised relief, then hand-painted.', ['prop-shield']),
     ('production wood', 'Embroidery hoop picture frames', 'Walnut frames with routed hoop recesses for displaying finished embroidery, nested and cut as a batch from one panel.', ['walnut-coasters']),
-    ('displays production', 'Point-of-purchase displays for DAP', 'Product displays and test pieces for DAP Products Inc., nested tightly on full sheets and cut in production quantities.', ['plaques-production', 'plaques-sheet', 'plaques-routing', 'production-kits']),
+    ('displays production', 'Point-of-purchase displays for DAP', 'Retail displays, sales demos and test pieces for DAP Products Inc. since 2020, nested on full sheets and cut in production quantities.', ['dap-ultra-clear-roof', 'dap-spray-texture-displays', 'dap-cnc-frames', 'dap-retail-samples', 'plaques-production', 'production-kits']),
     ('production', 'Cycling trainer rocker plate', 'A rocker plate for an indoor bike trainer, profiled and drilled from sheet stock so the bike can sway naturally while riding.', ['instrument-template']),
     ('signs', 'Engraved plywood sign', 'V-carved lettering in Baltic birch.', ['reload-sign']),
 ]
@@ -309,9 +309,9 @@ def brands():
              ('Product testing pieces', 'Repeatable sample boards and test pieces cut to the same spec every time, for R&amp;D and quality testing.'),
              ('Brand &amp; anniversary signage', 'Dimensional signs and milestone displays, like the Weldwood 100 Years piece we made for DAP.')]
     cards = ''.join(f'<div class="tile"><h3>{t}</h3><p>{d}</p></div>' for t, d in items)
-    gal = [('weldwood-sign-2', 'DAP Weldwood 100 Years dimensional display'), ('production-kits', 'Production run of demo kits for DAP'),
-           ('dap-kit-boxed', 'Boxed hands-on demo kit'), ('plaques-production', 'Display parts nested on a full sheet'),
-           ('plaques-sheet', 'Production sheet of display components'), ('dap-kit-samples', 'Sample pieces for a demo kit')]
+    gal = [('dap-weldwood-jlc', 'Our Weldwood 100 Years sign in DAP&#8217;s booth at JLC LIVE'), ('dap-ultra-clear-roof', 'Sealant demo board on real brick and asphalt'),
+           ('dap-spray-texture-displays', 'Spray texture store displays ready to ship'), ('dap-cnc-frames', 'Demo-board frames nested on the CNC router'),
+           ('dap-retail-samples', 'Hanging retail product displays'), ('dap-nsm-demos', 'Sales meeting demo pieces in production')]
     g = ''.join(f'<figure class="proj">{img(n, a)}<figcaption><p>{a}</p></figcaption></figure>' for n, a in gal)
     concepts = [('concept-pop-counter', 'Counter display', 'Tiered countertop display in birch plywood with a printed header, sized for a checkout counter or contractor desk.'),
                 ('concept-demo-station', 'Hands-on demo station', 'Demo table with angled test boards in wood, tile and drywall so customers can try the product themselves.'),
@@ -451,10 +451,11 @@ CASES = {
           ('Sample deck', '40&quot; x 30&quot; on Baltic birch; gravel, brick pavers and turf; 8% slope; PT 2x6 joists, composite decking; crated'),
           ('Pedestal displays', 'Three-sided PVC displays with fixed or movable joists, plus a six-pedestal deluxe deck'),
           ('Paver demos', '100 porcelain paver pedestal demos'), ('Timeline', 'Prototyped Dec 2023; displays shipped 2024; paver demos early 2025')],
-   gallery=[('bison-deck-shop', 'The sample deck in our shop before crating'), ('bison-deck-store', 'Sample deck on the shelf in a Home Depot store'),
-            ('bison-small-display', 'Illustration: three-sided PVC pedestal display with a movable joist'), ('bison-paver-demos', 'Illustration: porcelain paver pedestal demos')],
+   gallery=[('bison-deck-store', 'Sample deck on the shelf in a Home Depot store'), ('bison-deck-level', 'Sample deck with the 8% slope marked on the base'),
+            ('bison-pedestal-display', 'Three-sided PVC pedestal display with a joist'), ('bison-paver-demo', 'Porcelain paver pedestal demos in production'),
+            ('bison-pallets', 'Displays crated and palletized for shipping'), ('bison-deck-shop', 'The sample deck in our shop before crating')],
    links=[('All our DAP work', 'dap-products-displays.html'), ('Displays &amp; demos for brands', 'brands.html')],
-   note='Photos show the actual sample deck. The two images marked &#8220;Illustration&#8221; are renderings of other pieces from this project.'),
+   note=''),
  'dap-products-displays.html': dict(
    project='Point-of-purchase displays for DAP',
    title='Six years of displays &amp; demos for DAP',
@@ -462,14 +463,18 @@ CASES = {
    seo_title='DAP Products Displays, Sales Demos & Trade Show Pieces Since 2020 | Hudson Valley CNC',
    seo_desc='Since 2020 Hudson Valley CNC has built more than 10,000 in-store displays, sales demos, national sales meeting demos, trade-show pieces and test boards for DAP Products Inc.',
    lede='Since 2020 we&#8217;ve built more than 10,000 displays, demo boards, test pieces and trade-show items for DAP Products Inc., the maker of caulks, sealants, adhesives and patching products sold in nearly every hardware store.',
-   hero='production-kits',
+   hero='dap-weldwood-jlc',
    body="""<p>DAP keeps coming back because each job is the same kind of problem: a product that works better than it looks in the package. A bead of caulk that stretches, foam that fills a gap, a filler that disappears under paint. Our job is to build a piece that <strong>shows the product doing its job</strong> on real materials, then make hundreds of them exactly alike.</p>
 <p>That has meant <strong>retail displays</strong> that hang on store pegboard, <strong>hands-on demos</strong> for DAP&#8217;s sales reps, demo boards for the <strong>national sales meeting</strong>, a <strong>JLC LIVE</strong> trade-show display, an aluminum overhead frame for popcorn-ceiling demos, <strong>test boards</strong> for comparing paints and cure times, and the in-store <a href="bison-deck-display.html">Bison sample decks</a> for Home Depot.</p>
 <p>We work with real substrates (brick, concrete, drywall, oak, PVC, vinyl window flanges, porcelain pavers, rotted wood), apply DAP&#8217;s own products by hand, label and pack each piece, and ship to DAP, its agencies or straight to stores.</p>""",
    facts=[('Client since', '2020'), ('Projects', '30+ separate programs'), ('Pieces delivered', '10,000+'),
           ('Typical run', '40 to 500 identical pieces; up to 5,000 sample strips'), ('Uses', 'Retail displays, sales-rep demos, national sales meetings, trade shows, product testing')],
-   gallery=[('weldwood-sign-2', 'Weldwood 100 Years dimensional sign'), ('dap-kit-boxed', 'Hands-on demo kit'), ('dap-kit-samples', 'Demo kit sample pieces'),
-            ('plaques-production', 'Display parts nested on a full sheet'), ('plaques-routing', 'Display parts on the CNC router'), ('bison-deck-shop', 'Bison sample deck for Home Depot')],
+   gallery=[('dap-ultra-clear-roof', 'Ultra Clear Roof demo board: brick, clear sealant and asphalt side by side'), ('dap-cnc-frames', 'Demo-board frames nested and cut on our CNC router'),
+            ('dap-spray-texture-displays', 'Spray texture store displays, sealed and ready to ship'), ('dap-retail-samples', 'Hanging product displays for a retail chain'),
+            ('dap-asphalt-crack', 'Asphalt crack filler demo pieces'), ('dap-nsm-demos', 'National sales meeting demo pieces stacked for packing'),
+            ('dap-crack-filler', 'Concrete crack filler demo board'), ('dap-accent-wall', 'Textured accent-wall panel for JLC LIVE'),
+            ('dap-demo-frames', 'Demo-block frames in production'), ('dap-2in1-demo', 'Weldwood 2in1 wood glue and filler demo'),
+            ('dap-cracked-concrete', 'Cracked concrete tiles for crack filler demos'), ('bison-deck-shop', 'Bison sample deck for Home Depot')],
    links=[('Bison sample decks', 'bison-deck-display.html'), ('Displays &amp; demos for your brand', 'brands.html')],
    note='',
    extra="""<section class="tight"><div class="wrap"><div class="sec-head"><span class="eyebrow">Year by year</span><h2>A sampling of the work</h2></div>

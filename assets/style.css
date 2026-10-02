@@ -244,3 +244,4 @@ details p { margin-top: 10px; color: var(--ink-2); }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
 
 .year-table th { width: 96px; white-space: nowrap; }
+.year-table thead th:last-child { width: auto; }
