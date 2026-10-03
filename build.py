@@ -31,6 +31,9 @@ def schema():
     return '<script type="application/ld+json">' + _j.dumps(d) + '</script>'
 
 
+GOATCOUNTER = '\n<script data-goatcounter="https://hudsonvalleycnc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
+
+
 def head(page, title, desc):
     return f'''<title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
@@ -41,7 +44,7 @@ def head(page, title, desc):
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml"><link rel="icon" href="img/logo/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="img/logo/favicon-180.png">
 {schema() if page == 'index.html' else ''}
 {FONTS}
-<link rel="stylesheet" href="assets/style.css">'''
+<link rel="stylesheet" href="assets/style.css">{'' if C.PREVIEW else GOATCOUNTER}'''
 
 
 BRAND_MARK = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'brand-mark.svgfrag')).read()
