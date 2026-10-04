@@ -35,7 +35,7 @@ def home():
     ]
     tiles = ''.join(f'<a class="tile" href="{h}">{img(i, a, full=False)}<h3>{t}</h3><p>{d}</p><span class="more">See how we help &rarr;</span></a>' for h, i, a, t, d in aud)
     feat = [('library-plaque', 'Gardiner Library commemorative brick wall', 'Gardiner Library Brick Project'),
-            ('colorcore-sign', 'Two-color HDPE storefront sign on the router', 'Variable Movement sign'),
+            ('colorcore-sign-installed', 'Two-color HDPE Variable Movement sign installed on its posts', 'Variable Movement sign'),
             ('bison-deck-shop', 'Bison sample deck display for Home Depot', 'Bison sample decks for DAP'),
             ('dap-weldwood-jlc', 'Weldwood 100 Years sign in DAP&#8217;s JLC LIVE booth', 'DAP Weldwood 100 Years'),
             ('crates-stacked', 'Stacked plywood crates from a production run', 'Plywood crate production run'),
@@ -256,7 +256,7 @@ def artists():
 # ---------------------------------------------------------------- PROJECTS
 PROJECTS = [
     ('community signs', 'Gardiner Library Commemorative Brick Project', 'A live-edge display cut from locally sawn pine, carved and machined to re-mount the library\u2019s original brass donor plaques.', ['library-plaque', 'library-plaque-detail']),
-    ('signs', 'Variable Movement storefront sign', 'Multi-panel sign carved from King ColorCore two-color HDPE, with a raised, layered logo panel. Weatherproof and never needs painting.', ['colorcore-sign', 'colorcore-sign-detail']),
+    ('signs', 'Variable Movement roadside sign', 'Multi-panel roadside sign carved from King ColorCore two-color HDPE, with a raised, layered logo panel, now installed outside the business. Weatherproof and never needs painting.', ['colorcore-sign-installed', 'colorcore-sign-installed-2', 'colorcore-sign', 'colorcore-sign-detail']),
     ('signs community', 'Signs for Full Circle Gardiner', 'Carved and painted signs for The Living Room, Trailside Lounge, Hudson Valley Trailworks and Trailunity at Full Circle in Gardiner.', ['living-room-sign', 'living-room-sign-interior', 'fc-trail-signs-wall', 'trail-signs']),
     ('community art', 'Full Circle community loom', 'A 22-foot community loom at The Living Room, featured in Chronogram, with CNC-cut plywood ratchet mechanisms and a pegged hardwood beam.', ['loom-tapestry', 'loom-ratchet', 'loom-gearbox', 'loom-beam-pegs']),
     ('displays production', 'Bison sample deck displays for DAP', 'In-store sample decks, pedestal displays and paver demos for Bison Level.Up adjustable deck pedestals, built for DAP and placed in Home Depot stores.', ['bison-deck-shop', 'bison-deck-store', 'bison-pedestal-display', 'bison-paver-demo']),
