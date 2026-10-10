@@ -320,6 +320,10 @@ def brands():
                 ('concept-deck-display', 'Decking sample rack', 'Angled rack for deck-board colors and textures, with label tabs for each finish.'),
                 ('concept-booth', '10x10 trade-show booth', 'Slat back wall, product shelves, a cutaway model and a demo counter, built to pack flat.')]
     cg = ''.join(f'<figure class="proj">{img(n, t + " concept rendering")}<figcaption><h3>{t}</h3><p>{d}</p></figcaption></figure>' for n, t, d in concepts)
+    ffc = [('ff-empty-booth-concept', 'Before the doors open', 'Concept: a demo counter, sample boards and product shelves, ready at 7 am.'),
+           ('ff-ridge-wall-concept', 'A booth people walk into', 'Concept: a CNC-carved feature wall, island demo counter and sample pedestals.'),
+           ('ff-move-in-aisle-concept', 'Built to ship', 'Concept: crated displays waiting in the aisle at move-in.')]
+    ff = ''.join(f'<figure class="proj">{img(n, t + " (concept image)")}<figcaption><h3>{t}</h3><p>{d}</p></figcaption></figure>' for n, t, d in ffc)
     inds = [('Sealants &amp; adhesives', 'Bead demos on real substrates, counter displays, test panels'),
             ('Decking &amp; railing', 'Sample racks, deck cutaways, rep sample kits'),
             ('Fasteners &amp; connectors', 'Fastening demo boards, pull-test fixtures, counter displays'),
@@ -342,6 +346,16 @@ def brands():
   <div class="hero-copy"><span class="eyebrow">For product brands &amp; manufacturers</span><h1>Displays, demos &amp; trade-show pieces</h1>
   <p class="lede">We make in-store displays, hands-on sales demo kits, sales-meeting demos, trade-show pieces and product-testing items for manufacturers, in runs from a handful to hundreds.</p>{cta_row()}</div>
   <figure class="hero-img">{img('production-kits', 'Production run of product demo kits')}<figcaption>Demo kits in production for DAP Products Inc.</figcaption></figure>
+</div></section>
+<section class="showfloor"><div class="wrap">
+  <div class="split" style="align-items:center">
+    <div class="media"><video class="ad-video" controls preload="none" playsinline poster="video/hvcnc-brands-ad-poster.jpg"><source src="video/hvcnc-brands-ad-30s.mp4" type="video/mp4">Your browser can&#8217;t play this video.</video></div>
+    <div class="copy"><span class="eyebrow">Trade show season</span><h2>Your booth gets about three seconds</h2>
+    <p>Attendees decide fast. A piece they can touch, try or take apart turns a walk-by into a conversation. We build the demo stations, cutaway models, sample decks and rep kits that do that, then crate them for the show floor.</p>
+    <p>Planning for IBS or JLC LIVE 2027? Most display programs take 4&#8211;8 weeks from approved drawing to shipped, so now is the time to start. <a href="contact.html"><b>Talk to us about your show &rarr;</b></a></p></div>
+  </div>
+  <div class="grid g3" style="margin-top:36px">{ff}</div>
+  <p class="concept-note">The booth and show-hall scenes in the video and images above are AI-generated concepts, for illustration. The shop footage in the video, and the displays, demos and kits shown elsewhere on this page, are our real work.</p>
 </div></section>
 <section><div class="wrap split">
   <div class="copy"><span class="eyebrow">Proven with a national brand</span><h2>Trusted by DAP Products Inc.</h2>

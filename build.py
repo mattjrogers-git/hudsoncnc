@@ -93,6 +93,7 @@ def build(out, preview=False):
     os.makedirs(out)
     shutil.copytree(os.path.join(ROOT, 'assets'), os.path.join(out, 'assets'))
     shutil.copytree(os.path.join(ROOT, 'img'), os.path.join(out, 'img'))
+    if os.path.isdir(os.path.join(ROOT, 'video')): shutil.copytree(os.path.join(ROOT, 'video'), os.path.join(out, 'video'))
     for f in ('Hudson-Valley-CNC-Panel-Catalog.pdf', 'CNAME', 'robots.txt', '.nojekyll'):
         if os.path.exists(os.path.join(ROOT, f)): shutil.copy(os.path.join(ROOT, f), out)
     for name, (title, desc, body_fn) in C.PAGES.items():
