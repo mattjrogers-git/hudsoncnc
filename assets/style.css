@@ -249,3 +249,6 @@ details p { margin-top: 10px; color: var(--ink-2); }
 .brand-mark { width: 66px; height: auto; flex: none; color: var(--ink); margin-right: 2px; }
 .foot-badge { display: block; width: 140px; height: 140px; margin-bottom: 18px; }
 @media (max-width: 600px) { .brand-mark { width: 52px; } }
+
+.ad-video { width: 100%; aspect-ratio: 16/9; display: block; background: #0b0d0f; border: 1px solid var(--rule); }
+.concept-note { margin-top: 18px; font-size: .95rem; color: var(--ink-2); }
