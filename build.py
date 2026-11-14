@@ -15,7 +15,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
 
 NAV = [('index.html', 'Home'), ('services.html', 'Services'), ('panels.html', 'Panels'),
        ('contractors.html', 'Contractors'), ('brands.html', 'Brands'), ('artists.html', 'Artists'),
-       ('projects.html', 'Projects'), ('about.html', 'About')]
+       ('film-tv.html', 'Film &amp; TV'), ('projects.html', 'Projects'), ('about.html', 'About')]
 
 
 def schema():
@@ -34,11 +34,12 @@ def schema():
 GOATCOUNTER = '\n<script data-goatcounter="https://hudsonvalleycnc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
 
 
-def head(page, title, desc):
+def head(page, title, desc, og_image=None):
+    og_image = og_image or 'img/machine-full.jpg'
     return f'''<title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
 <meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}">
-<meta property="og:image" content="{C.SITE_URL}/img/machine-full.jpg"><meta property="og:type" content="website">
+<meta property="og:image" content="{C.SITE_URL}/{og_image}"><meta property="og:type" content="website">
 <link rel="canonical" href="{C.SITE_URL}/{'' if page == 'index.html' else page}">
 <meta property="og:url" content="{C.SITE_URL}/{'' if page == 'index.html' else page}"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml"><link rel="icon" href="img/logo/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="img/logo/favicon-180.png">
@@ -61,16 +62,20 @@ def header(page):
 </div></header>'''
 
 
-def footer():
+CTA_DEFAULT = ('Have drawings, a sketch, or just an idea?',
+               f'<a class="btn" href="contact.html">Request a Quote</a><a class="phone" href="tel:{C.PHONE_TEL}">{C.PHONE}</a>')
+
+
+def footer(cta=CTA_DEFAULT):
     return f'''<section class="cta tight"><div class="wrap">
-  <h2>Have drawings, a sketch, or just an idea?</h2>
-  <div class="hero-actions"><a class="btn" href="contact.html">Request a Quote</a><a class="phone" href="tel:{C.PHONE_TEL}">{C.PHONE}</a></div>
+  <h2>{cta[0]}</h2>
+  <div class="hero-actions">{cta[1]}</div>
 </div></section>
 <footer class="site-foot"><div class="wrap">
   <div class="cols">
-    <div><img class="foot-badge" src="img/logo/badge.svg" alt="Hudson Valley CNC badge" width="120" height="120"><h4>Hudson Valley CNC</h4><p>Industrial CNC routing, carving and fabrication on a 5&#8242; &times; 10&#8242; automatic tool-change router. Serving the Hudson Valley, the Catskills and the NYC region.</p></div>
+    <div><img class="foot-badge" src="img/logo/badge.svg" alt="Hudson Valley CNC badge" width="120" height="120"><h4>Hudson Valley CNC</h4><p>CNC routing and carving on a 5&#8242; &times; 10&#8242; automatic tool-change router, backed by a full wood, metal, stone and mechanical shop. Serving the Hudson Valley, the Catskills and the NYC region.</p></div>
     <div><h4>Visit / Call</h4><ul><li>{C.ADDRESS}</li><li><a href="tel:{C.PHONE_TEL}">{C.PHONE}</a></li>{f'<li><a href="mailto:{C.EMAIL}">{C.EMAIL}</a></li>' if C.EMAIL else ''}<li>By appointment</li></ul></div>
-    <div><h4>Explore</h4><ul><li><a href="services.html">Services</a></li><li><a href="brands.html">Displays &amp; demos for brands</a></li><li><a href="panels.html">Panel catalog</a></li><li><a href="projects.html">Projects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Request a quote</a></li></ul></div>
+    <div><h4>Explore</h4><ul><li><a href="services.html">Services</a></li><li><a href="brands.html">Displays &amp; demos for brands</a></li><li><a href="film-tv.html">Film &amp; TV set fabrication</a></li><li><a href="panels.html">Panel catalog</a></li><li><a href="projects.html">Projects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Request a quote</a></li></ul></div>
   </div>
   <div class="fine">&copy; Hudson Valley CNC, a dba of Clean Air Yurts and Woodworks LLC &middot; New Paltz, New York</div>
 </div></footer>
@@ -78,8 +83,9 @@ def footer():
 
 
 def page(name, title, desc, body, preview=False):
-    h = head(name, title, desc)
-    b = header(name) + f'\n<main id="main">\n{body}\n</main>\n' + footer()
+    opts = C.PAGE_OPTS.get(name, {})
+    h = head(name, title, desc, opts.get('og_image'))
+    b = header(name) + f'\n<main id="main">\n{body}\n</main>\n' + footer(opts.get('cta', CTA_DEFAULT))
     if preview and name == 'index.html':
         return h + '\n' + b  # artifact wraps the entry page in its own skeleton
     return ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'

@@ -21,17 +21,40 @@ def cta_row(extra=''):
     return f'<div class="hero-actions"><a class="btn" href="contact.html">Request a Quote</a><a class="btn ghost" href="tel:{PHONE_TEL}">Call {PHONE}</a>{extra}</div>'
 
 
+SHOP_LINE = ' Full woodworking, welding, stone cutting and mechanical shop.'
+
+
+def shop_block(open_tag):
+    return f'''{open_tag}
+<div class="sec-head"><span class="eyebrow">A full fabrication shop</span><h2>More than a CNC router</h2>
+<p class="lede">The router is where a lot of jobs start, not where they end. Our shop is fully outfitted for woodworking, welding and metalwork, stone cutting, and mechanical and motorized builds, so we can build the whole project under one roof, not just cut the parts.</p></div>
+<div class="grid g3">
+<div class="tile"><h3>Woodworking</h3><p>A complete woodshop for milling, joinery, assembly and finishing, from furniture and casework parts to crates and display builds.</p></div>
+<div class="tile"><h3>Welding &amp; metalwork</h3><p>Steel frames, bases, brackets, stands and hardware, cut, bent, welded and finished in-house.</p></div>
+<div class="tile"><h3>Stone cutting</h3><p>Stone cut and shaped for tops, plaques, bases, inlays and display pieces.</p></div>
+<div class="tile"><h3>Mechanical &amp; motorized</h3><p>Mechanisms, gears, linkages and motorized pieces, from rotating displays to moving props. We built the ratchet and gear mechanisms for the 22-foot Full Circle loom.</p></div>
+<div class="tile"><h3>Mixed-material builds</h3><p>Wood, metal, stone, plastics and real building materials combined in one piece, and everything fits because one shop made it all.</p></div>
+<div class="tile"><h3>Finishing &amp; assembly</h3><p>Sanding, painting, sealing, hardware and final assembly, so it leaves ready to install, ship or use.</p></div>
+</div>
+<p style="margin-top:28px">If you can sketch it, we can probably build it. Tell us about the whole project, not just the cut file.</p>
+</div></section>'''
+
+
 # ---------------------------------------------------------------- HOME
 def home():
     aud = [
-        ('contractors.html', 'crates-on-table', 'Plywood parts nested on the router table', 'Contractors & Builders',
-         'Panels cut and drilled, carved trim, curved forms and roof details, ready to install.'),
-        ('panels.html', 'relief-carving', 'Carved white 3D relief panel', 'Designers & Architects',
-         'Wall panels, screens, fixtures and millwork cut to your drawings, in any material we stock.'),
-        ('artists.html', 'portrait-engraving', 'Engraved photo portrait on a black panel', 'Artists & Makers',
-         'Relief carving, molds, terrain models, props and editions, cut to scale.'),
         ('services.html', 'trail-signs', 'Carved wood trail signs', 'Businesses & Communities',
          'Signs, trail markers, displays, plaques and production runs of your products.'),
+        ('film-tv.html', 'film-tile-sheet', 'Faux tile sheet machined for a film set', 'Film, TV &amp; Productions',
+         'Flats, signs, props and carved pieces cut from your file.'),
+        ('brands.html', 'production-kits', 'Production run of product demo kits', 'Displays &amp; Trade Shows',
+         'Point-of-purchase displays, sales demo kits and trade show displays for brands.'),
+        ('artists.html', 'portrait-engraving', 'Engraved photo portrait on a black panel', 'Artists & Makers',
+         'Relief carving, molds, terrain models, props and editions, cut to scale.'),
+        ('panels.html', 'relief-carving', 'Carved white 3D relief panel', 'Designers & Architects',
+         'Wall panels, screens, fixtures and millwork cut to your drawings, in any material we stock.'),
+        ('contractors.html', 'crates-on-table', 'Plywood parts nested on the router table', 'Contractors & Builders',
+         'Panels cut and drilled, carved trim, curved forms and roof details, ready to install.'),
     ]
     tiles = ''.join(f'<a class="tile" href="{h}">{img(i, a, full=False)}<h3>{t}</h3><p>{d}</p><span class="more">See how we help &rarr;</span></a>' for h, i, a, t, d in aud)
     feat = [('library-plaque', 'Gardiner Library commemorative brick wall', 'Gardiner Library Brick Project'),
@@ -46,7 +69,7 @@ def home():
   <div class="hero-copy">
     <span class="eyebrow">CNC routing &middot; carving &middot; fabrication</span>
     <h1>From trail signs to commercial builds</h1>
-    <p class="lede">Hudson Valley CNC cuts, carves and drills wood, plywood, plastics and composites on a 5&#8242; &times; 10&#8242; industrial router with a 12-tool automatic changer. Send drawings, a sketch or a sample. We&#8217;ll turn it into finished parts, one piece or a thousand.</p>
+    <p class="lede">Hudson Valley CNC cuts, carves and drills wood, plywood, plastics and composites on a 5&#8242; &times; 10&#8242; industrial router with a 12-tool automatic changer. Send drawings, a sketch or a sample. We&#8217;ll turn it into finished parts, one piece or a thousand. Behind the router is a full wood, metal, stone and mechanical shop, so we can build the whole project, not just the parts.</p>
     {cta_row()}
   </div>
   <figure class="hero-img"><img src="img/machine-full.jpg" alt="Hudson Valley CNC's 5 by 10 foot automatic tool-change CNC router in our shop" width="1200" height="1600"><figcaption>STM1530C &middot; 60&quot; &times; 120&quot; bed &middot; New Paltz, NY</figcaption></figure>
@@ -63,8 +86,9 @@ def home():
 <section><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Who we work with</span><h2>One shop, a wide range of work</h2>
   <p class="lede">A one-off carved sign and a run of 500 identical parts get the same care. Pick where you fit.</p></div>
-  <div class="grid g4">{tiles}</div>
+  <div class="grid g3">{tiles}</div>
 </div></section>
+{shop_block('<section class="dark"><div class="wrap">')}
 
 <section class="tight" style="background:var(--panel)"><div class="wrap split">
   <div class="media">{img('production-kits', 'Production run of product demo kits')}</div>
@@ -116,7 +140,7 @@ def services():
     S = [
         ('arch', 'relief-carving-3', 'Carved white relief panels', 'Architectural &amp; commercial',
          'Feature walls, carved and fluted panels, screens, reception desks, store fixtures and millwork for architects, designers and general contractors.',
-         ['Carved, fluted, slotted and acoustic wall panels', 'Decorative screens and room dividers', 'Store fixtures, slat walls and displays', 'Millwork parts, furniture and casework components (we cut the parts; we don&#8217;t build full cabinets)']),
+         ['Carved, fluted, slotted and acoustic wall panels', 'Decorative screens and room dividers', 'Store fixtures, slat walls and displays', 'Millwork parts, furniture, casework and cabinets']),
         ('prod', 'crates-on-table', 'Plywood crate parts nested on the router', 'Products &amp; production runs',
          'Repeatable parts for makers and manufacturers. We nest parts tightly to save material and keep programs on file for reorders.',
          ['Point-of-purchase displays and sales demo kits (<a href="brands.html">for brands</a>)', 'Product parts and flat-pack kits', 'Prototypes, trade-show pieces and short runs', 'Batch and repeat production', 'Jigs, fixtures and templates']),
@@ -136,9 +160,10 @@ def services():
     rows = ''.join(f'<div class="svc" id="{i}">{img(im, a)}<div class="copy"><h2>{t}</h2><p class="lede">{d}</p><ul class="ticks">{"".join(f"<li>{x}</li>" for x in li)}</ul></div></div>' for i, im, a, t, d, li in S)
     return f'''
 <header class="page-head"><div class="wrap"><span class="eyebrow">Services</span><h1>What we make</h1>
-<p class="lede">CNC routing, drilling, carving and engraving for builders, designers, artists and businesses. Every job runs on our 5&#8242; &times; 10&#8242; automatic tool-change router.</p>
+<p class="lede">CNC routing, drilling, carving and engraving for builders, designers, artists and businesses. Most jobs start on our 5&#8242; &times; 10&#8242; automatic tool-change router, and our wood, metal, stone and mechanical shop takes them the rest of the way.</p>
 <div class="jump">{''.join(f'<a href="#{i}">{t}</a>' for i, _, _, t, _, _ in S)}</div></div></header>
 <section class="tight"><div class="wrap">{rows}</div></section>
+{shop_block('<section style="background:var(--panel)"><div class="wrap">')}
 <section class="dark"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Capabilities</span><h2>The toolbox</h2></div>
   <div class="grid g2">
@@ -189,13 +214,14 @@ def panels():
 # ---------------------------------------------------------------- CONTRACTORS
 def contractors():
     ideas = [
-        ('Panel cutting &amp; drilling', 'Cut-to-size sheet goods, nested parts, hole patterns and hardware boring, dados and rabbets. Pressure rollers hold warped construction plywood flat. We don&#8217;t build full cabinets, but we&#8217;ll cut and drill any panel you need.'),
+        ('Panel cutting &amp; drilling', 'Cut-to-size sheet goods, nested parts, hole patterns and hardware boring, dados and rabbets. Pressure rollers hold warped construction plywood flat.'),
         ('Carved architectural details', 'Dentil molding, corbels, brackets, rosettes, cornice and frieze details, and restoration pieces matched from a sample or photo.'),
         ('Decorative roof &amp; exterior trim', 'Gable trim and vergeboards, scroll brackets, gable vents and louvers, rafter tails, finials and cupola parts, in wood, PVC trim board or HDU.'),
         ('Curved forms &amp; templates', 'Curved concrete and landscape forms, stair stringers, rafter and truss templates, routing templates and bending forms.'),
         ('Facade &amp; exterior panels', 'Fiber cement (HardieBoard), ACM and HPL panels cut and drilled for rainscreen and facade systems.'),
         ('Commercial interiors', 'Fluted and 3D wall panels, reception desk parts, store fixtures and slat walls. We&#8217;ve fabricated for retail store projects with Buxus Construction.'),
         ('Signage', 'Job-site signs and permanent signs for finished projects.'),
+        ('Metal, stone &amp; mechanisms', 'Welded steel brackets, bases and supports, cut stone, and mechanical and motorized assemblies, from the same shop that cuts your panels.'),
     ]
     cards = ''.join(f'<div class="tile"><h3>{t}</h3><p>{d}</p></div>' for t, d in ideas)
     return f'''
@@ -235,7 +261,8 @@ def artists():
            ('Large-scale &amp; public art', 'Installation parts, flat-pack slotted sculptures, armatures and mural substrates.'),
            ('Tools for potters', 'Texture mats, stamps, and slump and hump molds.'),
            ('Instrument parts', 'Guitar bodies, necks, templates and inlays.'),
-           ('String art boards', 'Precisely drilled pin patterns at any size.')]
+           ('String art boards', 'Precisely drilled pin patterns at any size.'),
+           ('Metal, stone &amp; motion', 'Welded steel bases, frames and armatures, cut and shaped stone, and mechanical and motorized pieces for kinetic work.')]
     cards = ''.join(f'<div class="tile"><h3>{t}</h3><p>{d}</p></div>' for t, d in svc)
     gal = [('relief-carving', '3D relief carving in white HDPE'), ('terrain-model', 'Shawangunk Ridge terrain model'),
            ('layered-portrait', 'Layered portrait artwork'), ('portrait-engraving', 'Engraved photo portrait on black panel'),
@@ -385,7 +412,7 @@ def brands():
 <section><div class="wrap split">
   <div class="copy"><h2>Why brands use a small shop</h2><ul class="ticks">
   <li>Fast turnaround for launch and meeting dates</li><li>One point of contact from prototype to production</li>
-  <li>Wood, plywood, acrylic, PVC, HDPE, ACM and more under one roof</li><li>Consistent parts across every run and reorder</li><li>Short runs without big-shop minimums</li></ul>
+  <li>Woodworking, welding, stone cutting and mechanical work under one roof, so welded, moving and mixed-material displays come from one shop</li><li>Consistent parts across every run and reorder</li><li>Short runs without big-shop minimums</li></ul>
   {cta_row()}</div>
   <div class="media">{img('plaques-routing', 'Display parts being routed on our CNC')}</div>
 </div></section>
@@ -532,7 +559,7 @@ def case_page(slug):
 def about():
     return f'''
 <header class="page-head"><div class="wrap"><span class="eyebrow">About</span><h1>A fabrication shop in the Hudson Valley</h1>
-<p class="lede">Hudson Valley CNC is a CNC routing and fabrication shop outside New Paltz, New York. We work with homeowners, small businesses, towns, contractors, architects, artists and manufacturers across the Hudson Valley and beyond.</p></div></header>
+<p class="lede">Hudson Valley CNC is a CNC routing and full fabrication shop (wood, metal, stone and mechanical) outside New Paltz, New York. We work with homeowners, small businesses, towns, contractors, architects, artists and manufacturers across the Hudson Valley and beyond.</p></div></header>
 <section><div class="wrap split">
   <div class="copy"><h2>Built for real production</h2>
   <p>Our shop runs an industrial automatic tool-change router with a full 5&#8242; &times; 10&#8242; vacuum table. It swaps between 12 tools on its own mid-job, so parts that need drilling, pocketing, carving and profiling come off the table in one setup.</p>
@@ -552,6 +579,7 @@ def about():
   <tr><th>Extras</th><td>Stand-alone rotary 4th axis; PCD diamond tooling</td></tr>
   </tbody></table></div></div>
 </div></section>
+{shop_block('<section style="background:var(--panel)"><div class="wrap">')}
 <section><div class="wrap split">
   <div class="copy"><h2>Our commitments</h2><ul class="ticks"><li>Clear quotes before we cut</li><li>Honest turnaround dates</li><li>Test cuts for anything new or delicate</li><li>Programs kept on file for fast reorders</li></ul>{cta_row()}</div>
   <div class="media">{img('machine-cutting', 'The router cutting a job in the shop')}</div>
@@ -560,6 +588,7 @@ def about():
 
 # ---------------------------------------------------------------- FAQ
 FAQ = [('What files do you accept?', 'DXF, DWG, SVG, AI and PDF for 2D work, and STL or OBJ for 3D carving. A sketch, photo or sample to match works too. We can draw it up.'),
+       ('Do you only do CNC work?', 'No. The CNC router is one part of a fully outfitted shop. We also do woodworking, welding and metalwork, stone cutting, and mechanical and motorized builds, so we can build complete projects, not just cut parts.'),
        ('Can you help with design?', 'Yes. We can turn a sketch into a cut file, adjust your drawings for CNC, or design from scratch.'),
        ('What&#8217;s the largest piece you can cut?', 'Sheets up to 5&#8242; &times; 10&#8242; in one piece, and material up to about 8&quot;&ndash;12&quot; thick depending on the part.'),
        ('What materials do you cut?', 'Wood and plywood, MDF, plastics (acrylic, polycarbonate, HDPE, PVC and more), HPL, phenolic, solid surface, ACM, aluminum, fiber cement, sign foam and HDU.'),
@@ -568,7 +597,6 @@ FAQ = [('What files do you accept?', 'DXF, DWG, SVG, AI and PDF for 2D work, and
        ('How long does a job take?', 'It depends on the size of the job and our schedule. Tell us your deadline and we&#8217;ll give you a date with your quote.'),
        ('Do you paint, finish or install?', 'We can prime, paint and clear-coat many pieces, and can help arrange installation. Ask with your quote.'),
        ('Do you deliver?', 'Local pickup at our New Paltz shop, or delivery around the Hudson Valley.'),
-       ('Do you build cabinets?', 'We don&#8217;t build full cabinets, but we&#8217;ll cut and drill any panels you need.'),
        ('How do I get a quote?', f'Use the <a href="contact.html">quote form</a> or call {PHONE}. Include drawings or photos, material, quantity and deadline.')]
 
 
@@ -618,15 +646,74 @@ def contact():
 </div></section>'''
 
 
+# ---------------------------------------------------------------- FILM & TV
+def film_tv():
+    return '''
+<section class="hero dark" style="padding-bottom:clamp(40px,6vw,72px)"><div class="wrap hero-grid">
+  <div class="hero-copy"><span class="eyebrow">For film, TV &amp; commercial productions</span><h1 style="font-size:clamp(2.2rem,4.4vw,3.9rem)">Set fabrication for film, TV and commercial productions</h1>
+  <p class="lede">Email us a file, a sketch or a photo. We cut, carve and drill the parts on a 5&#8242; &times; 10&#8242; CNC router in New Paltz. Quotes within 24 hours. Rush jobs in 1 to 2 days. Beyond CNC, we build in wood, metal and stone, and make mechanical and motorized pieces.</p><div class="hero-actions"><a class="btn" href="mailto:hudsonvalleycnc@gmail.com?subject=Film%20job%20quote">Email a File</a><a class="btn ghost" href="tel:+18453842994">Call 845-384-2994</a></div></div>
+  <figure class="hero-img"><img src="img/film-tile-sheet-sm.jpg" alt="Faux 4 inch wall tile machined from tempered hardboard on a CNC router for a film set" loading="lazy" decoding="async" data-full="img/film-tile-sheet.jpg"><figcaption>Faux wall tile machined from tempered hardboard for a film set</figcaption></figure>
+</div></section>
+<section><div class="wrap"><div class="sec-head"><span class="eyebrow">What we make for productions</span><h2>Parts for the set, cut to your file</h2></div><div class="grid g3"><div class="tile"><h3>Flats &amp; wall panels</h3><p>Cut-to-size sheets, wall panels, hole patterns and drilling.</p></div><div class="tile"><h3>Signage &amp; period signs</h3><p>Carved wood signs, HDU and sign foam, cut to your artwork.</p></div><div class="tile"><h3>Props</h3><p>Props and set pieces, cut or carved from a drawing or a reference photo.</p></div><div class="tile"><h3>Relief &amp; carved pieces</h3><p>3D relief carving, plus 4th-axis carving for posts and columns.</p></div><div class="tile"><h3>Multiples</h3><p>The same part, repeated, from one-offs to production runs.</p></div><div class="tile"><h3>Templates &amp; jigs</h3><p>Cut templates and jigs for your construction crew.</p></div></div>
+<p style="margin-top:28px">Materials include plywood, Baltic birch, MDF, tempered hardboard (HDF), hardwood, HDU and sign foam, PVC board, acrylic, HDPE, HPL, ACM and aluminum sheet. Tell us what the set needs and we will say what cuts well.</p></div></section>
+<section class="dark"><div class="wrap split">
+<div class="copy"><span class="eyebrow">Beyond the cut file</span><h2>A full shop for the whole set piece</h2>
+<p>CNC is the fast part. We&#8217;re also a fully outfitted wood, metal, stone and mechanical shop, so a production can hand us the whole build instead of splitting it across vendors.</p>
+<ul class="ticks">
+<li>Woodworking: built set pieces, furniture and set dressing, not just cut parts</li>
+<li>Welding &amp; metalwork: steel frames, brackets, bases and armatures</li>
+<li>Stone cutting: real stone tops, plaques and pieces, cut and shaped</li>
+<li>Mechanical &amp; motorized: moving props, mechanisms and motorized set pieces</li>
+<li>Mixed builds: wood, metal, stone, plastic and foam in one piece, delivered ready for the set</li>
+</ul></div>
+<div class="copy"><h3>One vendor, one schedule</h3><p>Fewer handoffs means fewer surprises on a tight shoot schedule. Send the drawing or a reference photo and we&#8217;ll tell you which parts we cut, which we weld, and when it&#8217;s ready.</p>
+<div class="hero-actions"><a class="btn" href="mailto:hudsonvalleycnc@gmail.com?subject=Film%20job%20quote">Email a File</a></div></div>
+</div></section>
+<section style="background:var(--panel)"><div class="wrap split">
+  <div class="media"><img src="img/film-tile-grout-sm.jpg" alt="Close-up of CNC-cut grout lines in faux tile panels" loading="lazy" decoding="async" data-full="img/film-tile-grout.jpg"></div>
+  <div class="copy"><span class="eyebrow">How fast</span><h2>File in. Quote. Cut. Pickup or delivery.</h2>
+  <ul class="ticks"><li>Rush jobs: 1 to 2 days, weekends included (rush pricing applies)</li><li>Quotes: within 24 hours</li><li>Standard jobs: 1 to 2 weeks</li><li>On the film job below, files to finished sheets took 3 days</li></ul></div>
+</div></section>
+<section><div class="wrap"><div class="sec-head"><span class="eyebrow">How to send us a job</span><h2>What to send us</h2></div>
+<div class="table-wrap"><table class="spec-table"><tbody>
+<tr><th>Files</th><td>DXF, SVG or AI files, a sketch with dimensions, or a reference photo</td></tr>
+<tr><th>Details</th><td>The material, the quantity and the day you need it</td></tr>
+<tr><th>Send to</th><td><a href="mailto:hudsonvalleycnc@gmail.com?subject=Film%20job%20quote">hudsonvalleycnc@gmail.com</a>. No file? Send the sketch and we will draw it.</td></tr>
+</tbody></table></div><div style="margin-top:28px"><div class="hero-actions"><a class="btn" href="mailto:hudsonvalleycnc@gmail.com?subject=Film%20job%20quote">Email a File</a><a class="btn ghost" href="tel:+18453842994">Call 845-384-2994</a></div></div></div></section>
+<section style="background:var(--panel)"><div class="wrap split">
+  <div class="media"><video class="ad-video" controls preload="none" playsinline poster="video/hvcnc-film-tile-demo-poster.jpg"><source src="video/hvcnc-film-tile-demo-720p.mp4" type="video/mp4">Your browser can&#8217;t play this video.</video></div>
+  <div class="copy"><span class="eyebrow">Recent film job</span><h2>22 sheets of faux 4&Prime; wall tile, in 3 days</h2>
+  <p>For the film <i>Butcher and Blackbird</i>, we machined 22 full sheets of tempered hardboard (HDF) into faux 4&Prime; wall tile, about 700 sq ft. From files to finished sheets: 3 days.</p>
+  <p>The video follows the job from the production&#8217;s quote request to finished sheets, in under a minute.</p></div>
+</div></section>
+<section><div class="wrap split">
+  <div class="media"><img src="img/machine-full-sm.jpg" alt="Hudson Valley CNC&#8217;s 5 by 10 foot automatic tool-change CNC router in our shop" loading="lazy" decoding="async" data-full="img/machine-full.jpg"></div>
+  <div class="copy"><span class="eyebrow">Where we are</span><h2>30 Crispell Lane, New Paltz</h2>
+  <p>Hours by appointment. We deliver in-house within 50 miles. Shipping and pickup are also available, and we have a forklift on site for loading. Delivery is quoted with the job.</p>
+  <p>We serve productions and scenic shops in Ulster, Dutchess, Orange, Greene and Columbia counties, and New York City. Drive times to the shop:</p>
+  <ul class="ticks"><li>From Kingston: about 35 minutes</li><li>From Newburgh: about 33 minutes</li><li>From Saugerties: about 50 minutes</li><li>From Poughkeepsie: about 30 minutes</li></ul></div>
+</div></section>'''
+
+
+FILM_EMAIL = 'mailto:hudsonvalleycnc@gmail.com?subject=Film%20job%20quote'
+PAGE_OPTS = {
+    'film-tv.html': {
+        'og_image': 'img/film-tile-sheet.jpg',
+        'cta': ('Have a part due? Send the file or a sketch and your date.',
+                f'<a class="btn" href="{FILM_EMAIL}">Email a File</a><a class="phone" href="tel:{PHONE_TEL}">{PHONE}</a>'),
+    },
+}
+
 PAGES = {
-    'index.html': ('Hudson Valley CNC | CNC Routing & Fabrication in New Paltz, NY', 'Industrial CNC routing, carving and fabrication in the Hudson Valley: signs, wall panels, architectural details, art fabrication and production runs on a 5x10 ATC router.', home),
-    'services.html': ('Services | Hudson Valley CNC', 'CNC routing, drilling, 3D carving, slab flattening, signs, architectural panels and production runs in New Paltz, NY.', services),
+    'index.html': ('Hudson Valley CNC | CNC Routing & Fabrication in New Paltz, NY', 'Industrial CNC routing, carving and fabrication in the Hudson Valley: signs, wall panels, architectural details, art fabrication and production runs on a 5x10 ATC router.' + SHOP_LINE, home),
+    'services.html': ('Services | Hudson Valley CNC', 'CNC routing, drilling, 3D carving, slab flattening, signs, architectural panels and production runs in New Paltz, NY.' + SHOP_LINE, services),
     'panels.html': ('Panel Collection | Hudson Valley CNC', 'Carved, fluted, flexible and acoustic wall panels and decorative screens, cut to order in the Hudson Valley.', panels),
     'brands.html': ('Point-of-Purchase Displays, Sales Demo Kits & Trade Show Displays | Hudson Valley CNC', 'CNC-made point-of-purchase displays, hands-on sales demo kits, sales meeting demos, trade show displays, cutaway wall and deck displays, demo boards and product testing items for building-product and tool brands. Trusted by DAP Products Inc.', brands),
     'contractors.html': ('For Contractors | Hudson Valley CNC', 'CNC panel cutting and drilling, carved trim, curved forms and exterior details for contractors and builders.', contractors),
     'artists.html': ('For Artists | Hudson Valley CNC', 'CNC fabrication for artists: relief carving, molds, terrain models, props, stipple art, lithophanes and editions.', artists),
+    'film-tv.html': ('Film Set Fabrication, Hudson Valley | Hudson Valley CNC', 'CNC for film sets in Ulster County. Panels, signs, props and carved pieces. Rush jobs in 1-2 days, quotes in 24 hours. Email a file to get started. Full wood, metal, stone and mechanical shop.', film_tv),
     'projects.html': ('Projects | Hudson Valley CNC', 'Signs, panels, furniture, art and production runs made at Hudson Valley CNC in New Paltz, NY.', projects),
-    'about.html': ('About | Hudson Valley CNC', 'About Hudson Valley CNC and our STM1530C automatic tool-change CNC router.', about),
+    'about.html': ('About | Hudson Valley CNC', 'About Hudson Valley CNC and our STM1530C automatic tool-change CNC router.' + SHOP_LINE, about),
     'faq.html': ('FAQ | Hudson Valley CNC', 'Answers about files, materials, sizes, turnaround and quotes.', faq),
     'contact.html': ('Request a Quote | Hudson Valley CNC', 'Request a CNC fabrication quote from Hudson Valley CNC. Call 845-384-2994.', contact),
 }
